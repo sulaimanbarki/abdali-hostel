@@ -1,0 +1,59 @@
+[09-Sep-2022 16:30:10 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 4076352 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 32
+[09-Sep-2022 16:32:40 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 4076352 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 32
+[09-Sep-2022 16:34:42 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 4076352 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 32
+[09-Sep-2022 16:44:30 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 4076352 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 32
+[09-Sep-2022 16:45:26 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 4076352 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 32
+[09-Sep-2022 16:52:29 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 4076352 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 32
+[09-Sep-2022 16:54:43 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 4076352 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 32
+[10-Sep-2022 15:35:14 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 69632 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/File.php on line 56
+[10-Sep-2022 15:35:35 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 1921024 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 32
+[10-Sep-2022 15:35:39 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 4096 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[10-Sep-2022 15:35:39 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8192 bytes) in /home/cwd2ajkgov/public_html/vendor/symfony/error-handler/Error/FatalError.php on line 50
+[10-Sep-2022 20:24:42 Asia/Karachi] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 2941984 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 32
+[16-Sep-2022 11:27:51 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[16-Sep-2022 11:27:51 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/cwd2ajkgov/public_html/vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php on line 180
+[16-Sep-2022 15:16:46 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[16-Sep-2022 15:16:46 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/cwd2ajkgov/public_html/vendor/laravel/framework/src/Illuminate/Hashing/HashServiceProvider.php on line 24
+[17-Sep-2022 17:36:46 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[17-Sep-2022 17:36:46 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/cwd2ajkgov/public_html/vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php on line 180
+[17-Sep-2022 22:30:26 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 24576 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[17-Sep-2022 22:30:26 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/cwd2ajkgov/public_html/vendor/laravel/framework/src/Illuminate/Hashing/HashServiceProvider.php on line 24
+[20-Sep-2022 09:05:55 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[20-Sep-2022 09:05:55 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php on line 110
+[27-Sep-2022 13:47:55 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[27-Sep-2022 13:47:55 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/laravel/framework/src/Illuminate/Auth/EloquentUserProvider.php on line 110
+[02-Oct-2022 05:35:28 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 05:35:29 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 05:35:32 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 05:37:35 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 05:37:36 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 05:37:37 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 07:17:29 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 07:17:30 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 07:17:30 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 07:19:53 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 07:19:55 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 07:19:55 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 07:20:52 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 07:20:53 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[02-Oct-2022 07:20:54 UTC] PHP Warning:  File upload error - unable to create a temporary file in Unknown on line 0
+[10-Oct-2022 16:10:57 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[10-Oct-2022 16:10:57 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /home/cwd2ajkgov/public_html/vendor/symfony/error-handler/Error/FatalError.php on line 14
+[19-Oct-2022 12:53:25 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[19-Oct-2022 12:53:25 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /home/cwd2ajkgov/public_html/vendor/symfony/error-handler/Error/FatalError.php on line 14
+[18-Nov-2022 13:18:19 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[18-Nov-2022 13:18:19 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 65536 bytes) in /home/cwd2ajkgov/public_html/vendor/symfony/error-handler/Error/FatalError.php on line 14
+[10-Dec-2022 14:02:54 UTC] PHP Warning:  Missing boundary in multipart/form-data POST data in Unknown on line 0
+[10-Dec-2022 14:14:19 UTC] PHP Warning:  Missing boundary in multipart/form-data POST data in Unknown on line 0
+[10-Dec-2022 14:15:07 UTC] PHP Warning:  Missing boundary in multipart/form-data POST data in Unknown on line 0
+[10-Dec-2022 14:21:53 UTC] PHP Warning:  Missing boundary in multipart/form-data POST data in Unknown on line 0
+[14-Dec-2022 22:10:44 UTC] PHP Warning:  Missing boundary in multipart/form-data POST data in Unknown on line 0
+[14-Dec-2022 22:14:57 UTC] PHP Warning:  Missing boundary in multipart/form-data POST data in Unknown on line 0
+[04-Feb-2023 01:32:31 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 12288 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[04-Feb-2023 07:47:39 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[22-Mar-2023 19:31:04 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 38
+[22-May-2023 16:53:25 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 38
+[16-Jul-2023 23:54:11 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[23-Aug-2023 14:40:08 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[06-Dec-2023 18:20:03 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154
+[15-Dec-2023 16:06:17 Asia/Karachi] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/cwd2ajkgov/public_html/vendor/intervention/image/src/Intervention/Image/Gd/Decoder.php on line 154

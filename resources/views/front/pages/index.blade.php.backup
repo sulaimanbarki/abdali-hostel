@@ -1,0 +1,12 @@
+@extends('front/layouts/layout')
+
+@section('title', 'Home')
+@section('content')
+<x-banner />
+<x-healthwelcome />
+<x-adminhead />
+<x-counter />
+<x-news />
+<x-projects />
+<x-contact />
+@endsection

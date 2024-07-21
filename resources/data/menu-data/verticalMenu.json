@@ -1,0 +1,78 @@
+{
+  "menu": [
+    {
+      "name": "Dashboards",
+      "badgeClass": "badge badge-light-warning badge-pill ml-auto mr-1",
+      "icon": "home",
+      "slug": "admin.dashboard",
+      "url": "admin/dashboard"
+    },
+    {
+      "navheader": "Apps & Pages",
+      "slug": ""
+    },
+    {
+      "name": "registration",
+      "icon": "user",
+      "slug": "registrations.index",
+      "url": "admin/registrations",
+      "permission": "user-list"
+    },
+    {
+      "name": "fees",
+      "icon": "dollar-sign",
+      "slug": "fees.index",
+      "url": "admin/fees",
+      "permission": "user-list"
+    },
+    {
+      "name": "expenses",
+      "icon": "dollar-sign",
+      "slug": "expenses.index",
+      "url": "admin/expenses",
+      "permission": "user-list"
+    },
+    {
+      "name": "staff",
+      "icon": "user",
+      "slug": "staff.index",
+      "url": "admin/staff",
+      "permission": "user-list"
+    },
+    {
+      "navheader": "Settings",
+      "slug": ""
+    },
+    {
+      "name": "Settings",
+      "icon": "settings",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "admin/settings",
+          "name": "theme setting",
+          "icon": "settings",
+          "slug": "settings.index"
+        },
+        {
+          "url": "admin/floors",
+          "name": "floors",
+          "icon": "settings",
+          "slug": "floors.index"
+        },
+        {
+          "url": "admin/rooms",
+          "name": "rooms",
+          "icon": "settings",
+          "slug": "rooms.index"
+        },
+        {
+          "url": "admin/expense_heads",
+          "name": "expense heads",
+          "icon": "settings",
+          "slug": "expense_heads.index"
+        }
+      ]
+    }
+  ]
+}

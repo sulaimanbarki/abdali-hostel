@@ -1,0 +1,64 @@
+@extends('front/layouts/layout')
+
+@section('title', 'Gallary')
+@section('content')
+<section class="d-block page-title-banner" style="background-image: url('{{ $pageData? $pageData->getFirstMediaUrl('banner'): '#'}}');">
+    <div class="banner-overlay">
+        <div class="custom-container">
+            <div class="d-flex flex-column align-items-center justify-content-center title-con">
+                <div>
+                    <h1 class="page-title fw-bold">{{$category->title?? 'Gallery' }} Gallery</h1>
+                </div>
+            </div>
+            <div class="breadcrumbs-con">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="{{url('/')}}" class="text-decoration-none text-Capitalize">Home</a></li>
+                        <li class="breadcrumb-item text-Capitalize active" aria-current="page">{{ $category->title?? 'Gallery'}} Gallery</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="custom-container">
+        <div class="row mb-5">
+      
+            @foreach($galleries as $gallery)
+            @php $mediaItems = $gallery->getMedia('gallary') @endphp
+            @if(count($mediaItems)>0)
+            @foreach($mediaItems as $key=> $media)
+            <div class="col-6 col-sm-4 mb-4">
+                <a href="{{$mediaItems[$key]->getFullUrl()}}" data-fancybox="images" data-caption="{{$gallery->title}}">
+                    <span class="d-block position-relative image-box overflow-hidden">
+                        <img src="{{$mediaItems[ $key]->getFullUrl()}}" class="img-fluid w-100 h-auto" alt="" />
+                        </apn>
+                </a>
+            </div>
+            @endforeach
+            @endif
+            @endforeach
+
+        </div>
+
+
+        <div class="d-block w-100 text-center mb-5">
+            {!! $galleries->links('pagination::custom') !!}
+        </div>
+    </div>
+</section>
+
+@endsection
+@section('script')
+<script type="text/javascript">
+    $(document).ready(function($) {
+
+        $().fancybox({
+            selector: '[data-fancybox="images"]',
+            loop: true
+        });
+    });
+</script>
+@endsection
