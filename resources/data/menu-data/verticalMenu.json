@@ -40,9 +40,22 @@
       "permission": "user-list"
     },
     {
-      "navheader": "Settings",
-      "slug": ""
+        "name": "reports",
+        "icon": "settings",
+        "slug": "",
+        "submenu": [
+          {
+            "url": "admin/reports/fee-reports",
+            "name": "fee reports",
+            "icon": "settings",
+            "slug": "reports.fee-reports"
+          }
+        ]
     },
+    {
+        "navheader": "Settings",
+        "slug": ""
+      },
     {
       "name": "Settings",
       "icon": "settings",

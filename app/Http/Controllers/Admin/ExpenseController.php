@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Expense;
 use App\Models\ExpenseHead;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ExpenseController extends Controller
@@ -37,11 +38,26 @@ class ExpenseController extends Controller
             'description' => 'nullable|string',
         ]);
 
-        Expense::create($request->all());
+        $expense = Expense::create($request->all());
+
+        Transaction::updateOrCreate(
+            [
+                'transection_type' => 2,
+                'transection_type_id' => $expense->id
+            ],
+            [
+                'amount' => $request->input('amount'),
+                'transection_date' => now(),
+                'description' => 'Expense for expense head ID ' . $expense->expense_head_id . '. Amount: ' . $request->input('amount'),
+                'type' => 'debit',
+                'status' => 'completed'
+            ]
+        );
 
         Alert::toast('Expense created successfully', 'success');
         return redirect()->route('expenses.index');
     }
+
 
     public function show($id)
     {
@@ -68,9 +84,24 @@ class ExpenseController extends Controller
         $expense = Expense::findOrFail($id);
         $expense->update($request->all());
 
+        Transaction::updateOrCreate(
+            [
+                'transection_type' => 2,
+                'transection_type_id' => $expense->id
+            ],
+            [
+                'amount' => $request->input('amount'),
+                'transection_date' => now(),
+                'description' => 'Expense for expense head ID ' . $expense->expense_head_id . '. Amount: ' . $request->input('amount'),
+                'type' => 'debit',
+                'status' => 'completed'
+            ]
+        );
+
         Alert::toast('Expense updated successfully', 'success');
         return redirect()->route('expenses.index');
     }
+
 
     public function destroy($id)
     {

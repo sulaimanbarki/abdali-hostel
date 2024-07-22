@@ -207,7 +207,7 @@ return [
 
 
 
-    // table Data 
+    // table Data
     'Title' => 'Title',
     'S.No' => 'S.No',
     'Status' => 'Status',
@@ -226,6 +226,8 @@ return [
     'fees' => 'Fees',
     'expense heads' => 'Expense Heads',
     'expenses' => 'Expenses',
-    'staff' => 'Staff'
+    'staff' => 'Staff',
+    'reports' => 'Reports',
+    'fee reports' => 'Fee Reports'
 
 ];

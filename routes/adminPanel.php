@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-    // Resources Controller 
+    // Resources Controller
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('settings', SettingController::class);
@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('expense_heads', ExpenseHeadController::class);
 
 
+    // functions
     Route::resource('registrations', RegistrationController::class);
     Route::resource('fees', FeeController::class);
     Route::post('/fees/pay', [FeeController::class, 'pay_fees'])->name('fees.pay');
@@ -53,4 +54,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('staff', StaffController::class);
     Route::get('staff-payment-list/{staff_id}', [StaffController::class, 'staff_payment_list'])->name('staff.payment');
     Route::post('staff-pay/{staff_id}', [StaffController::class, 'staff_pay'])->name('staff.pay');
+
+    // reports
+    Route::prefix('reports')->group(function () {
+        Route::get('fee-reports', [ReportsController::class, 'fee_reports'])->name('reports.fee-reports');
+    });
 });
