@@ -18,40 +18,7 @@
       "url": "admin/registrations",
       "permission": "user-list"
     },
-    {
-      "name": "fees",
-      "icon": "dollar-sign",
-      "slug": "fees.index",
-      "url": "admin/fees",
-      "permission": "user-list"
-    },
-    {
-      "name": "expenses",
-      "icon": "dollar-sign",
-      "slug": "expenses.index",
-      "url": "admin/expenses",
-      "permission": "user-list"
-    },
-    {
-      "name": "staff",
-      "icon": "user",
-      "slug": "staff.index",
-      "url": "admin/staff",
-      "permission": "user-list"
-    },
-    {
-        "name": "reports",
-        "icon": "settings",
-        "slug": "",
-        "submenu": [
-          {
-            "url": "admin/reports/fee-reports",
-            "name": "fee reports",
-            "icon": "settings",
-            "slug": "reports.fee-reports"
-          }
-        ]
-    },
+    
     {
         "navheader": "Settings",
         "slug": ""
