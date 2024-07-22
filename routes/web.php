@@ -238,3 +238,11 @@ Route::group(['middleware' => ['auth']], function () {
     // locale Route
     Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 });
+
+
+// optimize clear command
+Route::get('/optimize', function() {
+    $output = [];
+    \Artisan::call('optimize:clear', $output);
+    dd($output);
+});
