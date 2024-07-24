@@ -228,6 +228,8 @@ return [
     'expenses' => 'Expenses',
     'staff' => 'Staff',
     'reports' => 'Reports',
-    'fee reports' => 'Fee Reports'
+    'fee reports' => 'Fee Reports',
+    'expense reports' => 'Expense Reports',
+    'profit loss reports' => 'Profit Loss Reports'
 
 ];

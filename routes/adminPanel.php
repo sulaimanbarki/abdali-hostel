@@ -58,5 +58,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     // reports
     Route::prefix('reports')->group(function () {
         Route::get('fee-reports', [ReportsController::class, 'fee_reports'])->name('reports.fee-reports');
+        Route::get('fee-reports-bydate', [ReportsController::class, 'fee_reports_bydate'])->name('reports.fee_reports-bydate');
+        Route::get('expense-reports', [ReportsController::class, 'expense_reports'])->name('reports.expense_reports');
+        Route::get('expense-reports-bydate', [ReportsController::class, 'expense_reports_bydate'])->name('reports.expense_reports_bydate');
+        Route::get('profit-loss-reports', [ReportsController::class, 'profit_loss_reports'])->name('reports.profit_loss_reports');
+        Route::get('profit-loss-reports-bydate', [ReportsController::class, 'profit_loss_reports_bydate'])->name('reports.profit_loss_reports_bydate');
     });
 });

@@ -49,7 +49,19 @@
             "name": "fee reports",
             "icon": "settings",
             "slug": "reports.fee-reports"
-          }
+          },
+          {
+              "url": "admin/reports/expense-reports",
+              "name": "expense reports",
+              "icon": "settings",
+              "slug": "reports.expense_reports"
+          },
+            {
+              "url": "admin/reports/profit-loss-reports",
+              "name": "profit loss reports",
+              "icon": "settings",
+              "slug": "reports.profit_loss_reports"
+            }
         ]
     },
     {
