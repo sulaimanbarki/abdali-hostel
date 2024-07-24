@@ -193,17 +193,22 @@
                         <p><strong>Fee Date:</strong> ${new Date(data.fee_date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</p>
                         <p><strong>Amount:</strong> ${data.amount}</p>
                         <p><strong>Status:</strong> ${data.status.replace(/\b\w/g, function(l) { return l.toUpperCase(); })}</p>
-                        <form id="payFeeForm" method="POST" action="/admin/fees/pay">
+                       <form id="payFeeForm" method="POST" enctype="multipart/form-data" action="/admin/fees/pay">
                             @csrf
                             <input type="hidden" name="fee_id" value="${data.id}">
                             <div class="form-group">
                                 <label for="paid_amount">Paid Amount</label>
                                 <input type="number" class="form-control" name="paid_amount" id="paid_amount" value="${data.amount}" required>
                             </div>
+                            <div class="form-group">
+                                <label for="attachment">Attachment (optional)</label>
+                                <input type="file" class="form-control" name="attachment" id="attachment">
+                            </div>
                             <button type="submit" class="btn btn-success">Pay</button>
                         </form>
+
                     `);
-                            $('#payFeeModal').modal('show'); // Make sure the modal is shown
+                            $('#payFeeModal').modal('show');
                         }
                     });
                 });
