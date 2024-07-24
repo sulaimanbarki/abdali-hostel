@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\HasMedia;
 
-class Fee extends Model
+class Fee extends Model  implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
     use SoftDeletes;
 
     protected $fillable = [
@@ -35,5 +37,4 @@ class Fee extends Model
     protected $dates = [
         'fee_date',
     ];
-    
 }

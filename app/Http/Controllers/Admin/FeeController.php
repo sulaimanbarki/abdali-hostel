@@ -90,6 +90,10 @@ class FeeController extends Controller
         }
 
         $fee->save();
+        if ($request->hasFile('attachment')) {
+            $fee->addMediaFromRequest('attachment')->toMediaCollection('attachment');
+        }
+
 
         Transaction::updateOrCreate(
             [
@@ -122,14 +126,41 @@ class FeeController extends Controller
     {
         $request->validate([
             'amount' => 'required|numeric|min:0',
+            'paid_amount' => 'required|numeric|min:0',
             'status' => 'required|string'
         ]);
 
         $fee = Fee::findOrFail($id);
+
+
+
         $fee->amount = $request->input('amount');
-        $fee->status = $request->input('status');
+        $fee->paid_amount = $request->input('paid_amount');
+
+
+        if ($fee->paid_amount < $fee->amount) {
+            $fee->status = 'partial-payment';
+        } else {
+            $fee->status = 'paid';
+        }
+
         $fee->save();
 
-        return redirect()->route('fees.index')->with('success', 'Fee updated successfully!');
+
+        Transaction::updateOrCreate(
+            [
+                'transection_type' => 1,
+                'transection_type_id' => $fee->id
+            ],
+            [
+                'amount' => $request->input('paid_amount'),
+                'transection_date' => now(),
+                'description' => 'Fee payment update for fee ID ' . $fee->id . '. Paid amount: ' . $request->input('paid_amount'),
+                'type' => 'credit',
+                'status' => 'completed'
+            ]
+        );
+
+        return redirect()->route('fees.index')->with('success', 'Fee updated and transaction recorded successfully!');
     }
 }
