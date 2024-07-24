@@ -138,10 +138,12 @@ class FeeController extends Controller
         $fee->paid_amount = $request->input('paid_amount');
 
 
-        if ($fee->paid_amount < $fee->amount) {
-            $fee->status = 'partial-payment';
-        } else {
-            $fee->status = 'paid';
+        if ($request->paid_amount > 0) {
+            if ($fee->paid_amount < $fee->amount) {
+                $fee->status = 'partial-payment';
+            } else {
+                $fee->status = 'paid';
+            }
         }
 
         $fee->save();

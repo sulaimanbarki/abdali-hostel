@@ -25,45 +25,7 @@
       "url": "admin/fees",
       "permission": "user-list"
     },
-    {
-      "name": "expenses",
-      "icon": "dollar-sign",
-      "slug": "expenses.index",
-      "url": "admin/expenses",
-      "permission": "user-list"
-    },
-    {
-      "name": "staff",
-      "icon": "user",
-      "slug": "staff.index",
-      "url": "admin/staff",
-      "permission": "user-list"
-    },
-    {
-      "name": "reports",
-      "icon": "settings",
-      "slug": "",
-      "submenu": [
-        {
-          "url": "admin/reports/fee-reports",
-          "name": "fee reports",
-          "icon": "settings",
-          "slug": "reports.fee-reports"
-        },
-        {
-          "url": "admin/reports/expense-reports",
-          "name": "expense reports",
-          "icon": "settings",
-          "slug": "reports.expense_reports"
-        },
-        {
-          "url": "admin/reports/profit-loss-reports",
-          "name": "profit loss reports",
-          "icon": "settings",
-          "slug": "reports.profit_loss_reports"
-        }
-      ]
-    },
+    
     
     {
       "navheader": "Settings",

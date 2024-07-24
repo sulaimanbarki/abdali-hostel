@@ -42,6 +42,7 @@
                                 <th>F Name</th>
                                 <th>Month</th>
                                 <th>Fee</th>
+                                <th>Paid</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -125,7 +126,13 @@
                             }
                         },
                         {
-                            data: 'amount'
+                            data: 'amount',
+                            // skip the decimal points
+                            render: $.fn.dataTable.render.number(',', '.', 0)
+                        },
+                        {
+                            data: 'paid_amount',
+                            render: $.fn.dataTable.render.number(',', '.', 0)
                         },
                         {
                             data: 'status',
