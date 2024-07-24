@@ -98,8 +98,9 @@
                     ajax: {
                         url: '{{ route('fees.index') }}',
                         data: function(d) {
-                            // Pass the selected month as a parameter
-                            d.fee_month = $('#filter_fee_month').val();
+                            if ($('#filter_fee_month').val()) {
+                                d.fee_month = $('#filter_fee_month').val();
+                            }
                             d.ajax = 1; // Add the ajax parameter
                         }
                     },
@@ -172,7 +173,7 @@
                         var filterHtml = `
                             <div class="d-flex">
                                 <label for="filter_fee_month" class="mr-2">Filter by Month:</label>
-                                <input type="month" id="filter_fee_month" class="form-control mr-2" value="{{ date('Y-m') }}" />
+                                <input type="month" id="filter_fee_month" class="form-control mr-2" />
                             </div>
                         `;
                         $('.dataTables_wrapper .card-header').append(filterHtml);

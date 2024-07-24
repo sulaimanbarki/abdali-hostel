@@ -8,11 +8,18 @@ use App\Models\Transaction;
 use App\Models\Registration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Actions\FeeAction;
 use App\Http\Controllers\Controller;
-
 
 class FeeController extends Controller
 {
+    protected $feeAction;
+
+    public function __construct(FeeAction $feeAction)
+    {
+        $this->feeAction = $feeAction;
+    }
+
     public function index(Request $request)
     {
         $query = Fee::with('registration', 'room', 'floor')->orderBy('id', 'DESC');
@@ -31,8 +38,6 @@ class FeeController extends Controller
         return view('content.apps.fees.index', compact('fees'));
     }
 
-
-
     public function store(Request $request)
     {
         $request->validate([
@@ -41,23 +46,7 @@ class FeeController extends Controller
 
         $feeMonth = Carbon::createFromFormat('Y-m', $request->fee_month)->startOfMonth();
 
-        $activeRegistrations = Registration::where('status', 1)->get();
-
-        foreach ($activeRegistrations as $registration) {
-            $feeExists = Fee::where('registration_id', $registration->id)
-                ->where('fee_date', $feeMonth)
-                ->exists();
-
-            if (!$feeExists) {
-                Fee::create([
-                    'registration_id' => $registration->id,
-                    'fee_date' => $feeMonth,
-                    'amount' => $registration->amount,
-                    'paid_amount' => 0, // default unpaid
-                    'status' => 'unpaid',
-                ]);
-            }
-        }
+        $this->feeAction->generateFeesForMonth($feeMonth);
 
         return redirect()->route('fees.index')->with('success', 'Fees generated successfully.');
     }
@@ -77,42 +66,18 @@ class FeeController extends Controller
 
         $fee = Fee::findOrFail($request->input('fee_id'));
 
-        if ($request->input('paid_amount') > $fee->amount) {
-            return redirect()->route('fees.index')->with('error', 'Paid amount cannot be greater than the total amount.');
+        try {
+            $this->feeAction->updateFeeStatusAndTransaction($fee, $request->input('paid_amount'));
+
+            if ($request->hasFile('attachment')) {
+                $fee->addMediaFromRequest('attachment')->toMediaCollection('attachment');
+            }
+        } catch (\Exception $e) {
+            return redirect()->route('fees.index')->with('error', $e->getMessage());
         }
-
-        $fee->paid_amount = $request->input('paid_amount');
-
-        if ($fee->paid_amount < $fee->amount) {
-            $fee->status = 'partial-payment';
-        } else {
-            $fee->status = 'paid'; // Assuming you have a 'paid' status for fully paid fees
-        }
-
-        $fee->save();
-        if ($request->hasFile('attachment')) {
-            $fee->addMediaFromRequest('attachment')->toMediaCollection('attachment');
-        }
-
-
-        Transaction::updateOrCreate(
-            [
-                'transection_type' => 1, // Type of transaction, assuming 1 for fee payments
-                'transection_type_id' => $fee->id
-            ],
-            [
-                'amount' => $request->input('paid_amount'),
-                'transection_date' => now(),
-                'description' => 'Fee payment for fee ID ' . $fee->id . '. Paid amount: ' . $request->input('paid_amount'),
-                'type' => 'credit', // Type of transaction, assuming 'credit' for payments
-                'status' => 'completed' // Adjust if needed
-            ]
-        );
 
         return redirect()->route('fees.index')->with('success', 'Fee paid and transaction recorded successfully!');
     }
-
-
 
     public function edit($id)
     {
@@ -120,7 +85,6 @@ class FeeController extends Controller
         $fee->fee_date = \Carbon\Carbon::parse($fee->fee_date); // Ensure fee_date is a Carbon instance
         return view('content.apps.fees.edit', compact('fee'));
     }
-
 
     public function update(Request $request, $id)
     {
@@ -132,36 +96,14 @@ class FeeController extends Controller
 
         $fee = Fee::findOrFail($id);
 
-
-
         $fee->amount = $request->input('amount');
         $fee->paid_amount = $request->input('paid_amount');
 
-
-        if ($request->paid_amount > 0) {
-            if ($fee->paid_amount < $fee->amount) {
-                $fee->status = 'partial-payment';
-            } else {
-                $fee->status = 'paid';
-            }
+        try {
+            $this->feeAction->updateFeeStatusAndTransaction($fee, $request->input('paid_amount'));
+        } catch (\Exception $e) {
+            return redirect()->route('fees.index')->with('error', $e->getMessage());
         }
-
-        $fee->save();
-
-
-        Transaction::updateOrCreate(
-            [
-                'transection_type' => 1,
-                'transection_type_id' => $fee->id
-            ],
-            [
-                'amount' => $request->input('paid_amount'),
-                'transection_date' => now(),
-                'description' => 'Fee payment update for fee ID ' . $fee->id . '. Paid amount: ' . $request->input('paid_amount'),
-                'type' => 'credit',
-                'status' => 'completed'
-            ]
-        );
 
         return redirect()->route('fees.index')->with('success', 'Fee updated and transaction recorded successfully!');
     }
