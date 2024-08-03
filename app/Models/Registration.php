@@ -17,6 +17,7 @@ class Registration extends Model implements HasMedia
     protected $fillable = [
         'name',
         'father_name',
+        'guardian_phone_no',
         'floor_id',
         'room_id',
         'amount',

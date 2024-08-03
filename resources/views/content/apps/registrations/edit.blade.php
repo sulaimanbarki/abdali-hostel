@@ -42,6 +42,14 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="guardian_phone_no">Guardian Phone Number</label>
+                    <input type="text" class="form-control" id="guardian_phone_no" name="guardian_phone_no" value="{{ old('guardian_phone_no', $registration->guardian_phone_no) }}" required>
+                    @error('guardian_phone_no')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="floor_id">Floor</label>
                     <select name="floor_id" id="floor_id" class="form-control" required onchange="fetchRoom(event)">
                         <option value="">Select Floor</option>

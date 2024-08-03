@@ -34,6 +34,10 @@
                         <td>{{ $registration->father_name }}</td>
                     </tr>
                     <tr>
+                        <td>Guardian Phone Number</td>
+                        <td>{{ $registration->guardian_phone_no }}</td>
+                    </tr>
+                    <tr>
                         <td>Floor</td>
                         <td>{{ $registration->floor->floor_name }}</td>
                     </tr>

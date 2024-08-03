@@ -44,14 +44,13 @@ class RegistrationController extends Controller
             'father_name' => 'required',
             'floor_id' => 'required',
             'room_id' => 'required',
-            'cnic' => 'required',
-            'address' => 'required',
+            'cnic' => 'nullable',
+            'address' => 'nullable',
             'registration_date' => 'required|date',
             'phone_no' => 'required',
             'whatsapp_no' => 'nullable',
             'dob' => 'nullable|date',
             'email' => 'nullable|email',
-            'status' => 'required',
             'amount' => 'required',
         ]);
 
@@ -67,7 +66,7 @@ class RegistrationController extends Controller
         }
 
         $data = $request->all();
-        $data['status'] = Helper::switchToDb($request->status);
+        $data['status'] = Helper::switchToDb($request->status ?? 'on');
 
         $registration = Registration::create($data);
         $registration->addAllMediaFromTokens();
@@ -120,14 +119,13 @@ class RegistrationController extends Controller
             'father_name' => 'required',
             'floor_id' => 'required',
             'room_id' => 'required',
-            'cnic' => 'required',
-            'address' => 'required',
+            'cnic' => 'nullable',
+            'address' => 'nullable',
             'registration_date' => 'required|date',
             'phone_no' => 'required',
             'whatsapp_no' => 'nullable',
             'dob' => 'nullable|date',
             'email' => 'nullable|email',
-            'status' => 'required',
             'amount' => 'required',
         ]);
 
