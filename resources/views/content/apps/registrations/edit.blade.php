@@ -6,7 +6,6 @@
 {{-- Vendor Css files --}}
 <link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
 <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
-<link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
 @endsection
 
 @section('page-style')
@@ -64,7 +63,12 @@
 
                 <div class="form-group">
                     <label for="room_id">Room</label>
-                    {!! Form::select('room_id', $rooms, old('room_id', $registration->room_id), ['class' => 'form-control', 'placeholder' => 'Select Room', 'id' => 'room_id']) !!}
+                    <select name="room_id" id="room_id" class="form-control" required>
+                        <option value="">Select Room</option>
+                        @foreach ($rooms as $key => $value)
+                            <option value="{{ $key }}" {{ old('room_id', $registration->room_id) == $key ? 'selected' : '' }}>{{ $value }}</option>
+                        @endforeach
+                    </select>
                     @error('room_id')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -104,7 +108,7 @@
 
                 <div class="form-group">
                     <label for="amount">Amount</label>
-                    <input type="text" class="form-control" id="amount" name="amount" value="{{ old('amount', $registration->amount) }}" required>
+                    <input type="number" class="form-control" id="amount" name="amount" value="{{ old('amount', $registration->amount) }}" required>
                     @error('amount')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -205,5 +209,10 @@
             $('#room_id').append('<option value="" selected>Select Room</option>');
         }
     }
+</script>
+<script>
+    $(document).ready(function () {
+        $('.flatpickr-basic').flatpickr();
+    });
 </script>
 @endsection

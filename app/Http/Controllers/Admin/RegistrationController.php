@@ -39,7 +39,7 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'name' => 'required',
             'father_name' => 'required',
             'floor_id' => 'required',
@@ -51,19 +51,8 @@ class RegistrationController extends Controller
             'whatsapp_no' => 'nullable',
             'dob' => 'nullable|date',
             'email' => 'nullable|email',
-            'amount' => 'required',
+            'amount' => 'required|gt:0',
         ]);
-
-
-        if ($validator->fails()) {
-            $errors = $validator->errors();
-            $errorDisplay = "";
-            foreach ($errors->messages() as $key => $error) {
-                $errorDisplay = $errorDisplay . '<br>' . $error[0];
-            }
-            Alert::toast($errorDisplay, 'error')->timerProgressBar();
-            return redirect()->back();
-        }
 
         $data = $request->all();
         $data['status'] = Helper::switchToDb($request->status ?? 'on');
@@ -114,7 +103,7 @@ class RegistrationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'name' => 'required',
             'father_name' => 'required',
             'floor_id' => 'required',
@@ -126,18 +115,8 @@ class RegistrationController extends Controller
             'whatsapp_no' => 'nullable',
             'dob' => 'nullable|date',
             'email' => 'nullable|email',
-            'amount' => 'required',
+            'amount' => 'required|gt:0',
         ]);
-
-        if ($validator->fails()) {
-            $errors = $validator->errors();
-            $errorDisplay = "";
-            foreach ($errors->messages() as $key => $error) {
-                $errorDisplay = $errorDisplay . '<br>' . $error[0];
-            }
-            Alert::toast($errorDisplay, 'error')->timerProgressBar();
-            return redirect()->back();
-        }
 
         $data = $request->all();
         $data['status'] = Helper::switchToDb($request->status);

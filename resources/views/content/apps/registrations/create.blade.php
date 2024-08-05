@@ -6,7 +6,6 @@
 {{-- Vendor Css files --}}
 <link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
 <link rel="stylesheet" href="{{ asset(mix('vendors/css/pickers/flatpickr/flatpickr.min.css')) }}">
-<link rel="stylesheet" href="{{ asset(mix('vendors/css/forms/select/select2.min.css')) }}">
 @endsection
 
 @section('page-style')
@@ -50,19 +49,25 @@
 
                 <div class="form-group">
                     <label for="floor_id">Floor</label>
-                    <select name="floor_id" id="floor_id" class="form-control" required onchange="fetchRoom(event)">
+                    <select name="floor_id" id="floor_id" class="form-control" required onchange="fetchRoom()">
                         <option value="">Select Floor</option>
                         @foreach ($floors as $key => $value)
-                            <option value="{{ $key }}">{{ $value }}</option>
+                            <option value="{{ $key }}" {{ old('floor_id') == $key ? 'selected' : '' }}>{{ $value }}</option>
                         @endforeach
                     </select>
                     @error('floor_id')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
+                </div>
 
                 <div class="form-group">
                     <label for="room_id">Room</label>
-                    {!! Form::select('room_id', [], old('room_id'), ['class' => 'form-control', 'placeholder' => 'Select Room', 'id' => 'room_id']) !!}
+                    <select name="room_id" id="room_id" class="form-control" required>
+                        <option value="">Select Room</option>
+                        @foreach ($rooms as $key => $value)
+                            <option value="{{ $key }}" {{ old('room_id') == $key ? 'selected' : '' }}>{{ $value }}</option>
+                        @endforeach
+                    </select>
                     @error('room_id')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -92,7 +97,6 @@
                     </div>
                 </div>
                 
-
                 <div class="form-group">
                     <label for="cnic">CNIC</label>
                     <input type="text" class="form-control" id="cnic" name="cnic" value="{{ old('cnic') }}" required>
@@ -183,11 +187,9 @@
 
 @section('page-script')
 {{-- Page js files --}}
-{{-- <script src="{{ asset(mix('js/scripts/pages/app-registration-create.js')) }}"></script> --}}
-
 <script>
-    function fetchRoom(event) {
-        var floor_id = event.target.value;
+    function fetchRoom() {
+        var floor_id = $('#floor_id').val();
         if (floor_id) {
             $.ajax({
                 url: '{{ url('/admin/get-rooms') }}/' + floor_id,
@@ -199,6 +201,9 @@
                     $.each(data, function(key, value) {
                         $('#room_id').append('<option value="' + key + '">' + value + '</option>');
                     });
+
+                    // Set old room_id value after fetching rooms
+                    $('#room_id').val('{{ old('room_id') }}');
                 }
             });
         } else {
@@ -206,5 +211,13 @@
             $('#room_id').append('<option value="" selected>Select Room</option>');
         }
     }
-    </script>
+
+    $(document).ready(function() {
+        // Fetch rooms if floor_id is already set (e.g., after validation error)
+        var oldFloorId = '{{ old('floor_id') }}';
+        if (oldFloorId) {
+            fetchRoom();
+        }
+    });
+</script>
 @endsection
