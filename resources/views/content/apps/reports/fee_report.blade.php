@@ -18,58 +18,29 @@
 @section('content')
     <!-- users list start -->
     <section class="app-user-list">
-        <!-- users filter start -->
-
-        <!-- users filter end -->
-        <!-- list section start -->
+        
         <div class="card">
             <div class="col-lg-12 text-right">
-
                 <form action="">
                     <div class="row">
-                        <div class="col-md-3">
-                            <input type="date" class="form-control" id="start_date">
+                        <div class="col-md-4">
+                            <input type="month" name="fee_month" id="fee_month" class="form-control mr-2"
+                                value="{{ date('Y-m') }}" />
                         </div>
-
-
-
-
-                        <div class="col-md-3">
-                            <input type="date" class="form-control" id="end_date">
+                        <div class="col-md-2">
+                            <button class="btn btn-primary" type="submit" id="datebetween">
+                                Month Wise
+                            </button>
                         </div>
-
-
-                        <div class="col-md-3">
-                            <button class="btn btn-primary" type="submit" id="datebetween">Date
-                                Between</button>
-                        </div>
-
-
-
                     </div>
                 </form>
-
-            </div>
-            <div class="table table-responsive pt-0">
-
-                <table class=" table">
-                    <thead class="thead-light">
-                        <tr>
-                            <th>Payment</th>
-                            <th>Dues</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-
             </div>
 
-            <div class="row p-1">
-                <div class="col-lg-12">
-                    {{-- {!! $registrations->links() !!} --}}
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div id="fee-report-container" class="card-body">
+                        <!-- Report data will be appended here -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,36 +65,59 @@
             $('#datebetween').click(function(e) {
                 e.preventDefault(); // Prevent the default form submission
 
-                var startDate = $('#start_date').val();
-                var endDate = $('#end_date').val();
+                var feeMonth = $('#fee_month').val();
 
-                if (startDate && endDate) {
+                if (feeMonth) {
                     $.ajax({
                         url: '{{ route('reports.fee_reports-bydate') }}',
                         method: 'GET',
                         data: {
-                            start_date: startDate,
-                            end_date: endDate
+                            fee_month: feeMonth,
                         },
                         success: function(response) {
+                            $('#fee-report-container').empty();
+                            var reportHtml = '';
 
-                            $('.table tbody').empty();
+                            response.fee_reports.forEach(function(report) {
+                                reportHtml += `<div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3 mt-2">
+                                                <h4>Floor No: ${report.floor}</h4>
+                                            </div>
+                                            <div class="col-md-3 mt-2">
+                                                <h4>Room No: ${report.room}</h4>
+                                            </div>
+                                            <div class="col-md-3 mt-2">
+                                                <h4>Name: ${report.name}</h4>
+                                            </div>
+                                            <div class="col-md-3 mt-2">
+                                                <h4>Fee: ${report.amount}</h4>
+                                            </div>
+                                            <div class="col-md-3 mt-2">
+                                                <h4>Status: ${report.status}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+                            });
 
+                            reportHtml += `<div class="card mt-3">
+                                <div class="card-body">
+                                    <h4>Total Fee Amount: ${response.total_fee_amount}</h4>
+                                    <h4>Total Transaction Amount: ${response.total_transaction_amount}</h4>
+                                    <h4>Total Amount: ${response.total_amount}</h4>
+                                </div>
+                            </div>`;
 
-                            var tableBody = `<tr>
-                        <td>${response.total_transaction_amount}</td>
-                        <td>${response.total_fee_amount}</td>
-                        <td>${response.total_amount}</td>
-                         </tr>`;
-
-                            $('.table tbody').append(tableBody);
+                            $('#fee-report-container').append(reportHtml);
                         },
                         error: function(error) {
                             console.log('Error:', error);
                         }
                     });
                 } else {
-                    alert('Please select both start date and end date.');
+                    alert('Please select a month.');
                 }
             });
         });

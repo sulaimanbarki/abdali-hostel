@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'Staff List')
+@section('title', 'Staff Roles')
 
 @section('vendor-style')
     {{-- Vendor Css files --}}
@@ -15,45 +15,39 @@
 
 @section('content')
     <section class="app-user-list">
-        <!-- list section start -->
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Staff List</h4>
-                <a href="{{ route('staff.create') }}" class="btn btn-primary">Add Staff</a>
+                <h4 class="card-title">Staff Roles</h4>
+                <a href="{{ route('staff_roles.create') }}" class="btn btn-primary">Add Staff Role</a>
             </div>
             <div class="card-datatable table-responsive pt-0">
                 <table class="table">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Father Name</th>
-                            <th>Address</th>
-                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($staff as $s)
+                        @foreach ($staffRoles as $role)
                             <tr>
-                                <td>{{ $s->name }}</td>
-                                <td>{{ $s->staffRole->staff_name }}</td>
-                                <td>{{ $s->phone_no }}</td>
-                                <td>{{ $s->status }}</td>
+                                <td>{{ $role->staff_name }}</td>
                                 <td>
-                                    <a href="{{ route('staff.show', $s->id) }}" class="btn btn-warning btn-sm">
+                                    <a href="{{ route('staff_roles.show', $role->id) }}" class="btn btn-warning btn-sm">
                                         <i data-feather="eye" class="font-medium-3"></i>
                                     </a>
-                                    <a href="{{ route('staff.edit', $s->id) }}" class="btn btn-primary btn-sm">
+                                    <a href="{{ route('staff_roles.edit', $role->id) }}" class="btn btn-primary btn-sm">
                                         <i data-feather="edit-2" class="font-medium-3"></i>
                                     </a>
-                                    {!! Form::open(['method' => 'DELETE', 'route' => ['staff.destroy', $s->id], 'style' => 'display:inline']) !!}
+                                    {!! Form::open([
+                                        'method' => 'DELETE',
+                                        'route' => ['staff_roles.destroy', $role->id],
+                                        'style' => 'display:inline',
+                                    ]) !!}
                                     <button type="submit" class="btn btn-danger btn-sm">
                                         <i data-feather="trash" class="font-medium-3"></i>
                                     </button>
                                     {!! Form::close() !!}
-                                    <a href="{{ route('staff.payment', $s->id) }}" class="btn btn-primary btn-sm">
-                                        <i data-feather="dollar-sign" class="font-medium-3"></i>
-                                    </a>
                                 </td>
                             </tr>
                         @endforeach
@@ -61,7 +55,6 @@
                 </table>
             </div>
         </div>
-        <!-- list section end -->
     </section>
 @endsection
 

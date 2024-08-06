@@ -19,5 +19,11 @@ class Staff extends Model
         'phone_no',
         'email',
         'status',
+        'staff_role_id'
     ];
+
+    public function staffRole()
+    {
+        return $this->belongsTo(StaffRole::class, 'staff_role_id');
+    }
 }

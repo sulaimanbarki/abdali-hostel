@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\DashboardController;
 use App\Models\Staff;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\StaffRoleController;
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -64,4 +65,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('profit-loss-reports', [ReportsController::class, 'profit_loss_reports'])->name('reports.profit_loss_reports');
         Route::get('profit-loss-reports-bydate', [ReportsController::class, 'profit_loss_reports_bydate'])->name('reports.profit_loss_reports_bydate');
     });
+
+
+
+    Route::resource('staff_roles', StaffRoleController::class);
 });

@@ -22,7 +22,9 @@ class FeeController extends Controller
 
     public function index(Request $request)
     {
-        $query = Fee::with('registration', 'room', 'floor')->orderBy('id', 'DESC');
+        $query = Fee::with('registration', 'room', 'floor')
+            ->whereHas('registration')
+            ->orderBy('id', 'DESC');
 
         if ($request->has('fee_month')) {
             $fee_month = $request->input('fee_month');

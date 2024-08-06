@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use AhmedAliraqi\LaravelMediaUploader\Entities\Concerns\HasUploader;
 
-class Registration extends Model implements HasMedia 
+class Registration extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia, SoftDeletes, HasUploader;
 
@@ -47,8 +47,8 @@ class Registration extends Model implements HasMedia
     {
         return $this->belongsTo(Room::class);
     }
-    // public function feeses()
-    // {
-    //     return $this->hasMany(Fee::class);
-    // }
+    public function feeses()
+    {
+        return $this->hasMany(Fee::class);
+    }
 }

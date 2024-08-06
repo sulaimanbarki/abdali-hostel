@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Staff;
+use App\Models\StaffRole;
 use App\Models\Transaction;
 use DataTables;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -18,7 +19,7 @@ class StaffController extends Controller
      */
     public function index(Request $request)
     {
-        $staff = Staff::orderBy('id', 'DESC')->get();
+        $staff = Staff::with('staffRole')->orderBy('id', 'DESC')->get();
 
         if ($request->has('ajax')) {
             return Datatables::of($staff)->make(true);
@@ -33,7 +34,9 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('content.apps.staff.create');
+        $staff_roles = StaffRole::all();
+
+        return view('content.apps.staff.create', get_defined_vars());
     }
 
     /**
@@ -44,17 +47,19 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        // validate the data
+        // dd($request->all());
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'father_name' => 'required|string|max:255',
             'cnic' => 'nullable|string|max:20',
             'address' => 'required|string|max:255',
             'phone_no' => 'required|string|max:15',
-            'email' => 'required|email|unique:staff,email',
+            'staff_role_id' => 'required|exists:staff_roles,id',
             'status' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
+
+        $data = $request->except(['image', '_token']);
 
         $staff = new Staff($request->except('image'));
 
@@ -159,7 +164,7 @@ class StaffController extends Controller
         ]);
 
         $data = $request->except('_token');
-        
+
         $data['transection_type'] = 3;
         $data['transection_type_id'] = $staff_id;
         $data['type'] = 'debit';

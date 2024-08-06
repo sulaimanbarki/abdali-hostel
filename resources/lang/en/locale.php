@@ -227,6 +227,7 @@ return [
     'expense heads' => 'Expense Heads',
     'expenses' => 'Expenses',
     'staff' => 'Staff',
+    'staff_roles' => 'Staff Roles',
     'reports' => 'Reports',
     'fee reports' => 'Fee Reports',
     'expense reports' => 'Expense Reports',
