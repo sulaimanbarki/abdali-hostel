@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use DataTables;
 use App\Models\Staff;
 use App\Models\StaffRole;
 use App\Models\Transaction;
-use DataTables;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class StaffController extends Controller
@@ -113,7 +114,7 @@ class StaffController extends Controller
             'cnic' => 'nullable|string|max:20',
             'address' => 'required|string|max:255',
             'phone_no' => 'required|string|max:15',
-            'email' => 'required|email|unique:staff,email,' . $id,
+
             'status' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);

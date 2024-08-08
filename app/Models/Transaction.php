@@ -20,4 +20,10 @@ class Transaction extends Model
         'type',
         'status',
     ];
+
+
+    public function fee()
+    {
+        return $this->belongsTo(Fee::class);
+    }
 }

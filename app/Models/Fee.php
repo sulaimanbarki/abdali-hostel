@@ -34,6 +34,15 @@ class Fee extends Model  implements HasMedia
         return $this->belongsTo(Floor::class);
     }
 
+    /**
+     * Get all of the tansections for the Fee
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tansections()
+    {
+        return $this->hasMany(Transaction::class);
+    }
     protected $dates = [
         'fee_date',
     ];

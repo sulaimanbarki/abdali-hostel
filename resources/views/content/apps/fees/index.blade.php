@@ -37,9 +37,9 @@
                     <table class="datatables-basic table">
                         <thead>
                             <tr>
-                                <th>id</th>
+                                <th>Room</th>
                                 <th>Name</th>
-                                <th>F Name</th>
+                                <th>Phone</th>
                                 <th>Month</th>
                                 <th>Fee</th>
                                 <th>Paid</th>
@@ -104,16 +104,18 @@
                             d.ajax = 1; // Add the ajax parameter
                         }
                     },
-                    columns: [{
-                            data: 'id'
+                    columns: [
+                        {
+                            data: 'room',
+                            name: 'room',
                         },
                         {
                             data: 'registration.name',
                             name: 'registration.name'
                         },
                         {
-                            data: 'registration.father_name',
-                            name: 'registration.father_name'
+                            data: 'registration.phone_no',
+                            name: 'registration.phone_no'
                         },
                         {
                             data: 'fee_date',

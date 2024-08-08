@@ -22,7 +22,7 @@ class FeeController extends Controller
 
     public function index(Request $request)
     {
-        $query = Fee::with('registration', 'room', 'floor')
+        $query = Fee::with('registration.room', 'floor')  // Include room in the registration relation
             ->whereHas('registration')
             ->orderBy('id', 'DESC');
 
@@ -33,12 +33,17 @@ class FeeController extends Controller
         }
 
         if ($request->has('ajax')) {
-            return Datatables::of($query)->make(true);
+            return Datatables::of($query)
+                ->addColumn('room', function ($fee) {
+                    return $fee->registration->room->room_name ?? 'N/A';  // Adjust to match your room field
+                })
+                ->make(true);
         }
 
         $fees = $query->get();
         return view('content.apps.fees.index', compact('fees'));
     }
+
 
     public function store(Request $request)
     {
