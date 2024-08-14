@@ -140,7 +140,6 @@ class RoleController extends Controller
             Alert::toast('You cannot delete this role', 'error');
             return redirect()->route('roles.index');
         }
-        dd($role);
         DB::table("roles")->where('id', $id)->delete();
         Alert::toast('Role deleted successfully', 'success');
         return redirect()->route('roles.index');
