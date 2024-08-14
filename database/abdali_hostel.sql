@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2024 at 12:57 PM
+-- Generation Time: Aug 14, 2024 at 04:48 AM
 -- Server version: 8.0.33
 -- PHP Version: 8.2.20
 
@@ -1108,18 +1108,10 @@ CREATE TABLE `fees` (
 --
 
 INSERT INTO `fees` (`id`, `registration_id`, `fee_date`, `amount`, `paid_amount`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, '2024-07-01', 6000.00, 0.00, 'unpaid', NULL, '2024-07-20 16:53:20', '2024-07-20 16:53:20'),
-(2, 2, '2024-07-01', 5500.00, 0.00, 'unpaid', NULL, '2024-07-20 16:53:20', '2024-07-20 16:53:20'),
-(3, 3, '2024-07-01', 6000.00, 0.00, 'unpaid', NULL, '2024-07-20 16:53:20', '2024-07-20 16:53:20'),
-(4, 1, '2024-06-01', 4000.00, 3000.00, 'partial-payment', NULL, '2024-07-20 16:53:35', '2024-07-21 03:20:19'),
-(5, 2, '2024-06-01', 6000.00, 6000.00, 'paid', NULL, '2024-07-20 16:53:35', '2024-07-21 03:19:03'),
-(6, 3, '2024-06-01', 6000.00, 6000.00, 'paid', NULL, '2024-07-20 16:53:35', '2024-07-21 02:35:08'),
-(7, 1, '2024-05-01', 6000.00, 0.00, 'unpaid', NULL, '2024-07-21 03:35:05', '2024-07-21 03:35:05'),
-(8, 2, '2024-05-01', 5500.00, 0.00, 'unpaid', NULL, '2024-07-21 03:35:05', '2024-07-21 03:35:05'),
-(9, 3, '2024-05-01', 6000.00, 0.00, 'unpaid', NULL, '2024-07-21 03:35:05', '2024-07-21 03:35:05'),
-(10, 1, '2024-08-01', 6000.00, 0.00, 'unpaid', NULL, '2024-07-21 04:17:23', '2024-07-21 04:17:23'),
-(11, 2, '2024-08-01', 5500.00, 0.00, 'unpaid', NULL, '2024-07-21 04:17:23', '2024-07-21 04:17:23'),
-(12, 3, '2024-08-01', 6000.00, 0.00, 'unpaid', NULL, '2024-07-21 04:17:23', '2024-07-21 04:17:23');
+(1, 2, '2024-07-01', 5500.00, 0.00, 'unpaid', NULL, '2024-07-24 17:19:57', '2024-07-24 17:19:57'),
+(2, 3, '2024-07-01', 6000.00, 6000.00, 'paid', NULL, '2024-07-24 17:19:57', '2024-07-24 17:28:33'),
+(3, 2, '2024-08-01', 5500.00, 0.00, 'unpaid', NULL, '2024-07-24 17:20:08', '2024-07-24 17:20:08'),
+(4, 3, '2024-08-01', 6000.00, 6000.00, 'paid', NULL, '2024-07-24 17:20:08', '2024-07-24 17:20:22');
 
 -- --------------------------------------------------------
 
@@ -1295,7 +1287,9 @@ INSERT INTO `media` (`id`, `model_type`, `model_id`, `uuid`, `collection_name`, 
 (1, 'AhmedAliraqi\\LaravelMediaUploader\\Entities\\TemporaryFile', 545, 'ed26e86b-e852-49a1-95b1-b8adc8c4c2a8', 'cnic', 'media-libraryy9bcHp', '1721459600.png', 'image/png', 'media', 'media', 575324, '[]', '{\"type\":\"image\",\"width\":563,\"height\":745,\"ratio\":\"0.756\",\"status\":\"processing\",\"progress\":100}', '{\"thumb\":true,\"small\":true,\"medium\":true,\"large\":true}', '[]', 1, '2024-07-20 07:13:20', '2024-07-20 07:13:21'),
 (2, 'AhmedAliraqi\\LaravelMediaUploader\\Entities\\TemporaryFile', 546, 'e4e1236a-e7e8-47c9-9127-d6eed3a9f010', 'image', 'media-librarybYEJGk', '1721459603.png', 'image/png', 'media', 'media', 575324, '[]', '{\"type\":\"image\",\"width\":563,\"height\":745,\"ratio\":\"0.756\",\"status\":\"processing\",\"progress\":100}', '{\"thumb\":true,\"small\":true,\"medium\":true,\"large\":true}', '[]', 1, '2024-07-20 07:13:23', '2024-07-20 07:13:24'),
 (3, 'App\\Models\\Registration', 3, 'c874da18-b5e8-4c5b-9a27-f4c0c3b04852', 'cnic', 'media-librarySxAcm9', '1721459623.png', 'image/png', 'media', 'media', 575324, '[]', '{\"type\":\"image\",\"width\":563,\"height\":745,\"ratio\":\"0.756\",\"status\":\"processing\",\"progress\":100}', '{\"thumb\":true,\"small\":true,\"medium\":true,\"large\":true}', '[]', 1, '2024-07-20 07:13:43', '2024-07-20 07:13:49'),
-(4, 'App\\Models\\Registration', 3, 'e7d1b0bd-55d9-4581-9c06-3e290a5d8549', 'image', 'media-libraryK2LDyH', '1721459626.png', 'image/png', 'media', 'media', 575324, '[]', '{\"type\":\"image\",\"width\":563,\"height\":745,\"ratio\":\"0.756\",\"status\":\"processing\",\"progress\":100}', '{\"thumb\":true,\"small\":true,\"medium\":true,\"large\":true}', '[]', 1, '2024-07-20 07:13:46', '2024-07-20 07:13:49');
+(4, 'App\\Models\\Registration', 3, 'e7d1b0bd-55d9-4581-9c06-3e290a5d8549', 'image', 'media-libraryK2LDyH', '1721459626.png', 'image/png', 'media', 'media', 575324, '[]', '{\"type\":\"image\",\"width\":563,\"height\":745,\"ratio\":\"0.756\",\"status\":\"processing\",\"progress\":100}', '{\"thumb\":true,\"small\":true,\"medium\":true,\"large\":true}', '[]', 1, '2024-07-20 07:13:46', '2024-07-20 07:13:49'),
+(5, 'AhmedAliraqi\\LaravelMediaUploader\\Entities\\TemporaryFile', 549, 'ef1303ec-ef5a-4a23-a7d2-36f594c322f5', 'cnic', 'media-libraryuzqcgG', '1722668076.png', 'image/png', 'media', 'media', 104012, '[]', '{\"type\":\"image\",\"width\":800,\"height\":719,\"ratio\":\"1.113\",\"status\":\"processing\",\"progress\":100}', '{\"thumb\":true,\"small\":true,\"medium\":true,\"large\":true}', '[]', 1, '2024-08-03 06:54:36', '2024-08-03 06:54:37'),
+(6, 'App\\Models\\Registration', 4, '6e87c5f2-d27f-4b1f-9663-4550e606f600', 'cnic', 'media-libraryg87EBh', '1722668114.png', 'image/png', 'media', 'media', 104012, '[]', '{\"type\":\"image\",\"width\":800,\"height\":719,\"ratio\":\"1.113\",\"status\":\"processing\",\"progress\":100}', '{\"thumb\":true,\"small\":true,\"medium\":true,\"large\":true}', '[]', 1, '2024-08-03 06:55:14', '2024-08-03 06:56:29');
 
 -- --------------------------------------------------------
 
@@ -1318,23 +1312,10 @@ INSERT INTO `menus` (`id`, `title`, `created_at`, `updated_at`) VALUES
 (1, 'user', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
 (2, 'role', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
 (3, 'setting', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
-(4, 'slide', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
-(5, 'Notification', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
-(6, 'Download', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
-(7, 'Team', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
-(8, 'Project', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
-(9, 'Alert', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
-(11, 'news', '2022-07-27 01:51:08', '2022-07-27 01:51:08'),
-(12, 'gallary', '2022-07-27 02:45:35', '2022-07-27 02:45:35'),
-(13, 'link', '2022-08-03 00:50:44', '2022-08-03 00:50:44'),
-(14, 'page', '2022-08-04 00:50:02', '2022-08-04 00:50:02'),
-(15, 'category', '2022-08-04 23:58:48', '2022-08-04 23:58:48'),
-(16, 'achievement', '2022-08-09 07:11:32', '2022-08-09 07:11:32'),
-(17, 'e_registeration', '2022-08-13 02:45:09', '2022-08-13 02:45:09'),
-(18, 'telephone', '2022-08-13 02:45:09', '2022-08-13 02:45:09'),
-(19, 'tender', '2022-08-13 10:20:12', '2022-08-13 10:20:12'),
-(20, 'Road Status', '2022-08-31 16:30:54', '2022-08-31 16:30:54'),
-(22, 'Road Info', '2024-05-16 07:12:56', '2024-05-16 07:12:56');
+(26, 'registration', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
+(25, 'expense', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
+(24, 'staff', '2022-07-06 20:56:31', '2022-07-06 20:56:31'),
+(23, 'fee', '2022-07-06 20:56:31', '2022-07-06 20:56:31');
 
 -- --------------------------------------------------------
 
@@ -1416,7 +1397,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (72, '2024_07_21_075804_create_transactions_table', 46),
 (73, '2024_07_21_100938_create_expense_heads_table', 47),
 (74, '2024_07_21_112010_create_expenses_table', 48),
-(75, '2024_07_21_120017_create_staff_table', 49);
+(75, '2024_07_21_120017_create_staff_table', 49),
+(76, '2024_08_03_115903_add_guardian_to_registrations', 50);
 
 -- --------------------------------------------------------
 
@@ -1447,7 +1429,8 @@ CREATE TABLE `model_has_roles` (
 --
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
-(3, 'App\\Models\\User', 1);
+(3, 'App\\Models\\User', 1),
+(6, 'App\\Models\\User', 23);
 
 -- --------------------------------------------------------
 
@@ -1693,7 +1676,23 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 (87, 'road_info-edit', 'web', '2024-05-16 07:12:56', '2024-05-16 07:12:56', 22),
 (86, 'road_info-create', 'web', '2024-05-16 07:12:56', '2024-05-16 07:12:56', 22),
 (85, 'road_info-list', 'web', '2024-05-16 07:12:56', '2024-05-16 07:12:56', 22),
-(88, 'road_info-delete', 'web', '2024-05-16 07:12:56', '2024-05-16 07:12:56', 22);
+(88, 'road_info-delete', 'web', '2024-05-16 07:12:56', '2024-05-16 07:12:56', 22),
+(89, 'registration-list', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 26),
+(90, 'registration-create', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 26),
+(91, 'registration-edit', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 26),
+(92, 'registration-delete', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 26),
+(93, 'fee-list', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 23),
+(94, 'fee-create', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 23),
+(95, 'fee-edit', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 23),
+(96, 'fee-delete', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 23),
+(97, 'expense-list', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 25),
+(98, 'expense-create', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 25),
+(99, 'expense-edit', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 25),
+(100, 'expense-delete', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 25),
+(101, 'staff-list', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 24),
+(102, 'staff-create', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 24),
+(103, 'staff-edit', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 24),
+(104, 'staff-delete', 'web', '2022-07-06 20:45:39', '2022-07-06 20:45:39', 24);
 
 -- --------------------------------------------------------
 
@@ -1758,6 +1757,7 @@ CREATE TABLE `registrations` (
   `id` bigint UNSIGNED NOT NULL,
   `name` varchar(125) COLLATE utf8mb4_unicode_ci NOT NULL,
   `father_name` varchar(125) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guardian_phone_no` varchar(125) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `floor_id` bigint UNSIGNED NOT NULL,
   `room_id` bigint UNSIGNED NOT NULL,
   `cnic` varchar(125) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -1779,10 +1779,16 @@ CREATE TABLE `registrations` (
 -- Dumping data for table `registrations`
 --
 
-INSERT INTO `registrations` (`id`, `name`, `father_name`, `floor_id`, `room_id`, `cnic`, `amount`, `address`, `image`, `registration_date`, `phone_no`, `whatsapp_no`, `dob`, `email`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Sylvia Henry', 'Reagan Meadows', 1, 1, 'Libero unde omnis sa', 6000, 'Deserunt ea similiqu', NULL, '2007-04-26', '+1 (848) 209-3217', '260', '1983-08-10', 'qihasytep@mailinator.com', '1', NULL, '2024-07-20 06:56:55', '2024-07-20 06:56:55'),
-(2, 'Sylvia Henry', 'Reagan Meadows', 1, 1, 'Libero unde omnis sa', 5500, 'Deserunt ea similiqu', NULL, '2007-04-26', '+1 (848) 209-3217', '260', '1983-08-10', 'qihasytep@mailinator.com', '1', NULL, '2024-07-20 06:57:56', '2024-07-20 06:57:56'),
-(3, 'Davis Roman', 'Jordan Dawson', 1, 1, 'Distinctio Voluptat', 6000, 'Facilis perspiciatis', NULL, '1996-08-09', '+1 (126) 792-1384', '68', '2005-02-09', 'fydezahify@mailinator.com', '1', NULL, '2024-07-20 07:13:49', '2024-07-20 07:19:54');
+INSERT INTO `registrations` (`id`, `name`, `father_name`, `guardian_phone_no`, `floor_id`, `room_id`, `cnic`, `amount`, `address`, `image`, `registration_date`, `phone_no`, `whatsapp_no`, `dob`, `email`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 'Sylvia Henry', 'Reagan Meadows', NULL, 1, 1, 'Libero unde omnis sa', 6000, 'Deserunt ea similiqu', NULL, '2007-04-26', '+1 (848) 209-3217', '260', '1983-08-10', 'qihasytep@mailinator.com', '1', '2024-07-24 17:19:29', '2024-07-20 06:56:55', '2024-07-24 17:19:29'),
+(2, 'Sylvia Henry', 'Reagan Meadows', NULL, 1, 1, 'Libero unde omnis sa', 5500, 'Deserunt ea similiqu', NULL, '2007-04-26', '+1 (848) 209-3217', '260', '1983-08-10', 'qihasytep@mailinator.com', '1', NULL, '2024-07-20 06:57:56', '2024-07-20 06:57:56'),
+(3, 'Davis Roman', 'Jordan Dawson', NULL, 1, 1, 'Distinctio Voluptat', 6000, 'Facilis perspiciatis', NULL, '1996-08-09', '+1 (126) 792-1384', '68', '2005-02-09', 'fydezahify@mailinator.com', '1', NULL, '2024-07-20 07:13:49', '2024-07-20 07:19:54'),
+(4, 'Chaim Beard', 'Ima Booth', NULL, 1, 1, 'Quos ab dolores plac', 84, 'Quisquam unde est c', NULL, '1973-04-24', '+1 (321) 885-7879', '449', '1993-07-07', 'sugi@mailinator.com', '1', NULL, '2024-08-03 06:56:29', '2024-08-03 06:56:29'),
+(5, 'Grady Osborn', 'Ayanna English', '+1 (626) 804-1754', 1, 1, 'Ut pariatur Quidem', 62, 'Anim mollit distinct', NULL, '2001-02-23', '+1 (878) 511-5899', '722', '2019-05-03', 'jipuk@mailinator.com', '1', NULL, '2024-08-03 07:00:46', '2024-08-03 07:02:05'),
+(6, 'Zorita Gibson', 'Nyssa Sanford', '+1 (623) 838-9619', 1, 1, 'Nulla ut totam volup', 58, 'Non voluptas delectu', NULL, '2013-02-23', '+1 (435) 872-7788', '384', '1980-02-07', 'legetyje@mailinator.com', '1', NULL, '2024-08-03 07:56:29', '2024-08-03 07:56:29'),
+(7, 'Kyle Serrano', 'Kitra Ewing', '+1 (367) 556-4158', 1, 1, 'Illo aut dolore et v', 69, 'Officiis non sunt q', NULL, '1986-11-07', '+1 (778) 607-7367', '732', '1998-07-04', 'hybi@mailinator.com', '1', NULL, '2024-08-05 13:17:39', '2024-08-05 13:17:39'),
+(8, 'India Huffman', 'Xenos Bowers', '+1 (214) 591-3486', 1, 1, 'Omnis eligendi natus', 64, 'Incididunt impedit', NULL, '2012-06-11', '+1 (736) 671-6861', '611', '2009-04-09', 'qicy@mailinator.com', '1', NULL, '2024-08-05 13:21:22', '2024-08-05 13:21:22'),
+(9, 'barkii', 'Abra Kramer', '+1 (237) 487-7913', 1, 1, 'Hic assumenda incidu', -34, 'Sed officia voluptas', NULL, '1983-06-30', '+1 (187) 946-8412', '371', '2019-01-19', 'jikimuqy@mailinator.com', '1', NULL, '2024-08-05 13:25:43', '2024-08-05 13:41:35');
 
 -- --------------------------------------------------------
 
@@ -1855,8 +1861,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(3, 'Super Admin', 'web', '2022-07-06 21:18:16', '2022-07-06 21:18:16'),
-(5, 'XEN', 'web', '2023-05-31 09:50:14', '2023-05-31 09:50:14');
+(3, 'Super Admin', 'web', '2022-07-06 21:18:16', '2024-08-14 04:45:26'),
+(6, 'Cashier', 'web', '2024-08-14 04:46:09', '2024-08-14 04:46:09');
 
 -- --------------------------------------------------------
 
@@ -1892,138 +1898,109 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (8, 2),
 (8, 3),
 (9, 3),
+(9, 6),
 (10, 3),
+(10, 6),
 (11, 3),
+(11, 6),
 (12, 3),
-(13, 3),
+(12, 6),
 (13, 5),
-(14, 3),
 (14, 5),
-(15, 3),
 (15, 5),
-(16, 3),
 (16, 5),
-(17, 3),
 (17, 5),
-(18, 3),
 (18, 5),
-(19, 3),
 (19, 5),
-(20, 3),
 (20, 5),
-(21, 3),
 (21, 5),
-(22, 3),
 (22, 5),
-(23, 3),
 (23, 5),
-(24, 3),
 (24, 5),
-(25, 3),
 (25, 5),
-(26, 3),
 (26, 5),
-(27, 3),
 (27, 5),
-(28, 3),
 (28, 5),
-(29, 3),
 (29, 5),
-(30, 3),
 (30, 5),
-(31, 3),
 (31, 5),
-(32, 3),
 (32, 5),
-(33, 3),
 (33, 5),
-(34, 3),
 (34, 5),
-(35, 3),
 (35, 5),
-(36, 3),
 (36, 5),
-(41, 3),
 (41, 5),
-(42, 3),
 (42, 5),
-(43, 3),
 (43, 5),
-(44, 3),
 (44, 5),
-(45, 3),
 (45, 5),
-(46, 3),
 (46, 5),
-(47, 3),
 (47, 5),
-(48, 3),
 (48, 5),
-(49, 3),
 (49, 5),
-(50, 3),
 (50, 5),
-(51, 3),
 (51, 5),
-(52, 3),
 (52, 5),
-(53, 3),
 (53, 5),
-(54, 3),
 (54, 5),
-(55, 3),
 (55, 5),
-(56, 3),
 (56, 5),
-(57, 3),
 (57, 5),
-(58, 3),
 (58, 5),
-(59, 3),
 (59, 5),
-(60, 3),
 (60, 5),
-(61, 3),
 (61, 5),
-(62, 3),
 (62, 5),
-(63, 3),
 (63, 5),
-(64, 3),
 (64, 5),
-(65, 3),
 (65, 5),
 (66, 5),
 (67, 5),
 (68, 5),
-(69, 3),
 (69, 5),
-(70, 3),
 (70, 5),
-(71, 3),
 (71, 5),
-(72, 3),
 (72, 5),
-(73, 3),
 (73, 5),
-(74, 3),
 (74, 5),
-(75, 3),
 (75, 5),
-(76, 3),
 (76, 5),
-(77, 3),
 (77, 5),
-(78, 3),
 (78, 5),
-(79, 3),
 (79, 5),
-(80, 3),
 (80, 5),
-(85, 3),
-(86, 3),
-(87, 3),
-(88, 3);
+(89, 3),
+(89, 6),
+(90, 3),
+(90, 6),
+(91, 3),
+(91, 6),
+(92, 3),
+(92, 6),
+(93, 3),
+(93, 6),
+(94, 3),
+(94, 6),
+(95, 3),
+(95, 6),
+(96, 3),
+(96, 6),
+(97, 3),
+(97, 6),
+(98, 3),
+(98, 6),
+(99, 3),
+(99, 6),
+(100, 3),
+(100, 6),
+(101, 3),
+(101, 6),
+(102, 3),
+(102, 6),
+(103, 3),
+(103, 6),
+(104, 3),
+(104, 6);
 
 -- --------------------------------------------------------
 
@@ -2102,7 +2079,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `name`, `footer`, `mainLayoutType`, `theme`, `sidebarCollapsed`, `navbarColor`, `horizontalMenuType`, `verticalMenuNavbarType`, `footerType`, `layoutWidth`, `showMenu`, `bodyClass`, `pageHeader`, `contentLayout`, `defaultLanguage`, `blankPage`, `direction`, `created_at`, `updated_at`, `status`, `deleted_at`, `contentsidebarClass`, `sidebarPositionClass`, `horizontalMenuClass`, `websiteName`, `email`, `android_app_link`, `ios_app_link`, `footer_note`, `address`, `phone`, `twitter`, `facebook`, `instagram`, `youtube`) VALUES
-(1, 'Main Theme', '<p class=\"clearfix mb-0\">\n    <span class=\"float-md-left d-block d-md-inline-block mt-25\">COPYRIGHT &copy; <script>document.write(new Date().getFullYear())</script>\n      <span class=\"d-none d-sm-inline-block\">, All rights Reserved</span>\n    </span>\n    <span class=\"float-md-right d-none d-md-block\">Hand-crafted & Made with<i data-feather=\"heart\"></i></span>\n  </p>', 'vertical', 'light', 0, 'bg-primary', 'floating', 'floating', 'static', 'boxed', 1, '', 1, 'default', 'en', 0, 'ltr', '2022-08-03 08:11:28', '2024-07-20 03:28:30', 1, NULL, 'default', 'content-right-sidebar', 'static', 'Abdali Hostel', 'info@abdalihostel.com', '#', '#', '<p><span style=\"color: rgb(0, 0, 0);\">Footer Note</span></p>', 'XCGJ+FVR Nauman Engineeing Works, Phase-1 Phase 1 Hayatabad, Peshawar, Khyber Pakhtunkhwa', '+92(321)-1234567', '#', '#', '#', '#');
+(1, 'Main Theme', '<p class=\"clearfix mb-0\">\r\n    <span class=\"float-md-left d-block d-md-inline-block mt-25\">COPYRIGHT &copy; <script>document.write(new Date().getFullYear())</script>\r\n      <span class=\"d-none d-sm-inline-block\">, All rights Reserved</span>\r\n    </span>\r\n    <span class=\"float-md-right d-none d-md-block\">Hand-crafted & Made with<i data-feather=\"heart\"></i></span>\r\n  </p>', 'vertical', 'light', 0, 'bg-primary', 'floating', 'floating', 'static', 'boxed', 1, '', 1, 'default', 'en', 0, 'ltr', '2022-08-03 08:11:28', '2024-07-22 13:09:08', 1, NULL, 'default', 'content-right-sidebar', 'static', 'Abdali Hostel', 'info@abdalihostel.com', '#', '#', '<p><span style=\"color: rgb(0, 0, 0);\">Footer Note</span></p>', 'XCGJ+FVR Nauman Engineeing Works, Phase-1 Phase 1 Hayatabad, Peshawar, Khyber Pakhtunkhwa', '+92(321)-1234567', '#', '#', '#', '#');
 
 -- --------------------------------------------------------
 
@@ -2175,7 +2152,8 @@ CREATE TABLE `staff` (
 
 INSERT INTO `staff` (`id`, `name`, `father_name`, `cnic`, `address`, `image`, `phone_no`, `email`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, 'Daquan Wallace', 'Karleigh Delaney', 'Esse mollitia non i', 'Natus qui eu aliqua', NULL, '345434565', 'kidusepy@mailinator.com', 'Active', '2024-07-21 08:07:58', '2024-07-21 08:03:50', '2024-07-21 08:07:58'),
-(2, 'Aladdin Sullivan', 'Nadine Horn', 'Sit ea sunt volupta', 'Voluptatem rerum qui', NULL, '2345654', 'tuhirekyc@mailinator.com', 'Active', NULL, '2024-07-21 08:07:55', '2024-07-21 08:07:55');
+(2, 'Aladdin Sullivan', 'Nadine Horn', 'Sit ea sunt volupta', 'Voluptatem rerum qui', NULL, '2345654', 'tuhirekyc@mailinator.com', 'Active', NULL, '2024-07-21 08:07:55', '2024-07-21 08:07:55'),
+(3, 'Hiroko Stout', 'Aquila Nash', 'Illo similique velit', 'Sed eaque quis aliqu', NULL, '23456543', 'kufabegyni@mailinator.com', 'Active', NULL, '2024-07-22 13:06:46', '2024-07-22 13:06:46');
 
 -- --------------------------------------------------------
 
@@ -2427,7 +2405,8 @@ INSERT INTO `temporary_files` (`id`, `token`, `collection`, `created_at`, `updat
 (541, 'kvBQdB9KuvtQ5GkurebqM6TqWg2S4ugPCkXvhuLdkzegLVtytHAlnVvcTDbw', 'cnic', '2024-07-20 06:53:37', '2024-07-20 06:53:37'),
 (542, 'Vkt8wdu7MF6cA9ZZmXFH4DKHUqZYzq4kqPAw3s1aBqMCZyC3sbyOe9SXMWAP', 'image', '2024-07-20 06:53:45', '2024-07-20 06:53:45'),
 (546, '3ftNtD2AUGR5yaxROyoPG5xPhcAP2V4IraMxR9yakTALAYn01cM3zk5tQ8D6', 'image', '2024-07-20 07:13:23', '2024-07-20 07:13:23'),
-(545, 'ZSKWYv49vK5AiG3KLLWq0i1bCgcBKbZToRvC7PHMXDYit8uZNK6X1xyUjvEs', 'cnic', '2024-07-20 07:13:20', '2024-07-20 07:13:20');
+(545, 'ZSKWYv49vK5AiG3KLLWq0i1bCgcBKbZToRvC7PHMXDYit8uZNK6X1xyUjvEs', 'cnic', '2024-07-20 07:13:20', '2024-07-20 07:13:20'),
+(549, 'mwPQFUa9jjWm85Zz1lSvE10LjfZdpB2eBcvGJPtgQATHc2mD24yDGq9YzSdf', 'cnic', '2024-08-03 06:54:36', '2024-08-03 06:54:36');
 
 -- --------------------------------------------------------
 
@@ -2618,9 +2597,8 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`id`, `transection_type`, `transection_type_id`, `amount`, `transection_date`, `description`, `type`, `status`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 3, 2, 6000.00, '2024-07-21', 'Fee payment for fee ID 5. Paid amount: 6000.00', 'credit', 'completed', NULL, '2024-07-21 03:20:09', '2024-07-21 03:20:09'),
-(2, 3, 2, 3000.00, '2024-07-21', 'Fee payment for fee ID 4. Paid amount: 3000', 'credit', 'completed', NULL, '2024-07-21 03:20:19', '2024-07-21 03:20:19'),
-(3, 3, 2, 23000.00, '2024-07-21', 'dsf', 'debit', 'completed', NULL, '2024-07-21 11:21:28', '2024-07-21 11:21:28');
+(1, 1, 4, 10000.00, '2024-07-24', 'Fee payment for fee ID 4. Paid amount: 10000', 'credit', 'completed', NULL, '2024-07-24 17:20:22', '2024-07-24 17:20:22'),
+(2, 1, 2, 6000.00, '2024-07-24', 'Fee payment for fee ID 2. Paid amount: 6000.00', 'credit', 'completed', NULL, '2024-07-24 17:20:22', '2024-07-24 17:28:33');
 
 -- --------------------------------------------------------
 
@@ -2644,7 +2622,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@admin.com', '2022-07-05 07:09:21', '$2y$10$0TYaX4UUGhR6NaxhhGELDuyHRjdnVS8SL90dwDWvxET83CQDlut7K', 'suaSbx3FSUZAPIiMwGSSWgonJ3wJvdwk8gqNqmVhqbCdcKJz2UoeUSOF5Awi', '2022-07-05 02:07:37', '2024-07-20 15:01:57');
+(1, 'Admin', 'admin@admin.com', '2022-07-05 07:09:21', '$2y$10$0TYaX4UUGhR6NaxhhGELDuyHRjdnVS8SL90dwDWvxET83CQDlut7K', 'EyxPFZ539TTXpkbbgvXXLFAoxd3KeYpzJf75V7mFoMjpip86ew6QG1yh7iP6', '2022-07-05 02:07:37', '2024-07-20 15:01:57'),
+(23, 'cachir', 'cashier@admin.com', '2024-08-14 04:47:42', '$2y$10$Dlg6x3Q2MX/Ze.OzOf5ufOd1v2QtVmCNa6igmhOVHo4qLkQhp51ly', NULL, '2024-08-14 04:46:38', '2024-08-14 04:46:38');
 
 -- --------------------------------------------------------
 
@@ -3035,7 +3014,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `fees`
 --
 ALTER TABLE `fees`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `floors`
@@ -3065,19 +3044,19 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -3107,7 +3086,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -3125,7 +3104,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `registrations`
 --
 ALTER TABLE `registrations`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `roads`
@@ -3143,7 +3122,7 @@ ALTER TABLE `road_infos`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `rooms`
@@ -3167,7 +3146,7 @@ ALTER TABLE `slides`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `teams`
@@ -3191,7 +3170,7 @@ ALTER TABLE `telephones`
 -- AUTO_INCREMENT for table `temporary_files`
 --
 ALTER TABLE `temporary_files`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=549;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=551;
 
 --
 -- AUTO_INCREMENT for table `tenders`
@@ -3203,13 +3182,13 @@ ALTER TABLE `tenders`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `weather`

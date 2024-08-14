@@ -16,56 +16,61 @@
       "icon": "user",
       "slug": "registrations.index",
       "url": "admin/registrations",
-      "permission": "user-list"
+      "permission": "registration-list"
     },
     {
       "name": "fees",
       "icon": "dollar-sign",
       "slug": "fees.index",
       "url": "admin/fees",
-      "permission": "user-list"
+      "permission": "fee-list"
     },
     {
       "name": "expenses",
       "icon": "dollar-sign",
       "slug": "expenses.index",
       "url": "admin/expenses",
+      "permission": "expense-list"
+    },
+    {
+      "name": "User",
+      "icon": "user",
+      "slug": "users.index",
+      "url": "admin/users",
       "permission": "user-list"
     },
-
-
-
     {
-        "name": "staff",
-        "icon": "user",
-        "slug": "",
-        "submenu": [
-          {
-            "url": "admin/staff",
-            "name": "staff",
-            "icon": "user",
-            "slug": "staff.index"
-          },
-          {
-            "url": "admin/staff_roles",
-            "name": "staff_roles",
-            "icon": "user",
-            "slug": "staff_roles.index"
-          }
-
-        ]
-      },
-
-
-
-
-
-
-
+      "url": "admin/roles",
+      "name": "Role",
+      "icon": "user-check",
+      "slug": "roles.index",
+      "permission": "role-list"
+    },
+    {
+      "name": "staff",
+      "icon": "user",
+      "slug": "",
+      "permission": "staff-list",
+      "submenu": [
+        {
+          "url": "admin/staff",
+          "name": "staff",
+          "icon": "user",
+          "slug": "staff.index"
+        },
+        {
+          "url": "admin/staff_roles",
+          "name": "staff_roles",
+          "icon": "user",
+          "slug": "staff_roles.index"
+        }
+      ]
+    },
     {
       "name": "reports",
       "icon": "settings",
       "slug": "",
+      "permission": "report-list",
       "submenu": [
         {
           "url": "admin/reports/fee-reports",
@@ -87,7 +92,6 @@
         }
       ]
     },
-
     {
       "navheader": "Settings",
       "slug": ""
@@ -96,6 +100,7 @@
       "name": "Settings",
       "icon": "settings",
       "slug": "",
+      "permission": "setting-list",
       "submenu": [
         {
           "url": "admin/settings",

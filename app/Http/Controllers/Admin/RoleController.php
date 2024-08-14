@@ -135,6 +135,12 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
+        $role = Role::where('name', 'Super Admin')->orWhere('id', 3)->first();
+        if ($role->id == $id) {
+            Alert::toast('You cannot delete this role', 'error');
+            return redirect()->route('roles.index');
+        }
+        dd($role);
         DB::table("roles")->where('id', $id)->delete();
         Alert::toast('Role deleted successfully', 'success');
         return redirect()->route('roles.index');

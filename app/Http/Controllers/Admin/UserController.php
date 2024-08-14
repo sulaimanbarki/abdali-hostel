@@ -111,6 +111,7 @@ class UserController extends Controller
         $input = $request->all();
         $input['email_verified_at'] = Carbon::now();
         $input['password'] = Hash::make($input['password']);
+        $input['email_verified_at'] = Carbon::now();
 
 
         $user = User::create($input);
