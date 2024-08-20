@@ -19,7 +19,9 @@ return new class extends Migration
             $table->unsignedBigInteger('floor_id');
             $table->string('room_type');
             $table->string('no_of_seats');
-            $table->string('status')->default('active');
+            $table->string('no_of_seats_available')->default(Null);
+            $table->string('room_status')->default('active');
+            $table->string('status')->default('UnBooked');
             $table->double('price', 10, 2)->nullable();
             $table->softDeletes();
             $table->timestamps();

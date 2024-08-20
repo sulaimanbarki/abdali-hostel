@@ -231,6 +231,7 @@ return [
     'reports' => 'Reports',
     'fee reports' => 'Fee Reports',
     'expense reports' => 'Expense Reports',
-    'profit loss reports' => 'Profit Loss Reports'
+    'profit loss reports' => 'Profit Loss Reports',
+    'available rooms' => 'Available Rooms'
 
 ];

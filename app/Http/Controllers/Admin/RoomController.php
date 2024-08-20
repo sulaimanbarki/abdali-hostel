@@ -45,20 +45,27 @@ class RoomController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        // validate the data
-        $this->validate($request, [
-            'room_name' => 'required',
-            'floor_id' => 'required|exists:floors,id',
-            'room_type' => 'required',
-            'no_of_seats' => 'required|integer',
-            'price' => 'nullable|numeric',
-        ]);
+{
+    //
+    $this->validate($request, [
+        'room_name' => 'required',
+        'floor_id' => 'required|exists:floors,id',
+        'room_type' => 'required',
+        'no_of_seats' => 'required|integer',
+        'price' => 'nullable|numeric',
+    ]);
 
-        $room = Room::create($request->all());
-        Alert::toast('Room created successfully', 'success');
-        return redirect()->route('rooms.index');
-    }
+
+    $data = $request->all();
+    $data['no_of_seats_available'] = $request->no_of_seats;
+
+
+    $room = Room::create($data);
+
+    Alert::toast('Room created successfully', 'success');
+    return redirect()->route('rooms.index');
+}
+
 
     /**
      * Display the specified resource.

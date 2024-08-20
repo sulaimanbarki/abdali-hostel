@@ -44,6 +44,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('floors', FloorController::class);
     Route::get('/get-rooms/{floor_id}', [FloorController::class, 'getRooms'])->name('get.rooms');
     Route::resource('rooms', RoomController::class);
+
     Route::resource('expense_heads', ExpenseHeadController::class);
 
 
@@ -64,6 +65,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('expense-reports-bydate', [ReportsController::class, 'expense_reports_bydate'])->name('reports.expense_reports_bydate');
         Route::get('profit-loss-reports', [ReportsController::class, 'profit_loss_reports'])->name('reports.profit_loss_reports');
         Route::get('profit-loss-reports-bydate', [ReportsController::class, 'profit_loss_reports_bydate'])->name('reports.profit_loss_reports_bydate');
+        Route::get('available-rooms', [ReportsController::class, 'available_rooms'])->name('room.available_rooms');
+        Route::get('filter-available-rooms', [ReportsController::class, 'filter_available_rooms'])->name('room.available_rooms');
+
     });
 
 

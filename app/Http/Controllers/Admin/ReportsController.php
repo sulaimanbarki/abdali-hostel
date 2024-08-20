@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Fee;
+use App\Models\Room;
+use App\Models\Floor;
 use App\Models\Expense;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
@@ -186,5 +188,29 @@ class ReportsController extends Controller
             'result' => $result,
             'status' => $status
         ]);
+    }
+
+    public function available_rooms()
+    {
+        $roomTypes = Room::select('room_type')->distinct()->get();
+
+        $floors = Floor::all();
+        return view('content.apps.available_rooms.filter_by_seats', get_defined_vars());
+    }
+    public function filter_available_rooms(Request $request)
+    {
+        $query = Room::query();
+
+        if ($request->has('floor_id') && $request->floor_id != '') {
+            $query->where('floor_id', $request->floor_id);
+        }
+
+        if ($request->has('room_type') && $request->room_type != '') {
+            $query->where('room_type', $request->room_type);
+        }
+        $query->where('status', 'UnBooked');
+        $rooms = $query->with('floor')->get();
+
+        return response()->json($rooms);
     }
 }
