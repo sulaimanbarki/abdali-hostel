@@ -57,17 +57,37 @@ class RegistrationController extends Controller
         $data = $request->all();
         $data['status'] = Helper::switchToDb($request->status ?? 'on');
 
-        $registration = Registration::create($data);
-        $registration->addAllMediaFromTokens();
+        $room = Room::findOrFail($request->room_id);
 
-        if ($registration) {
-            Alert::toast("Registration Created Successfully", 'success');
-            return redirect()->route('registrations.index');
+        // Check if there are available seats
+        if ($room->no_of_seats_available > 0) {
+            // Decrease the number of available seats by 1
+            $room->no_of_seats_available -= 1;
+
+            // Update room status if all seats are booked
+            if ($room->no_of_seats_available == 0) {
+                $room->status = 'Booked';
+            }
+
+            $room->save();
+
+            $registration = Registration::create($data);
+            $registration->addAllMediaFromTokens();
+
+            if ($registration) {
+                Alert::toast("Registration Created Successfully", 'success');
+                return redirect()->route('registrations.index');
+            } else {
+                Alert::toast('Failed to create registration', 'error');
+                return redirect()->back();
+            }
         } else {
-            Alert::toast('Failed to create registration', 'error');
+            // Show an error message if no seats are available
+            Alert::toast('No available seats in the selected room', 'error');
             return redirect()->back();
         }
     }
+
 
     /**
      * Display the specified resource.

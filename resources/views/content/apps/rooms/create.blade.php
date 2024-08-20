@@ -70,12 +70,12 @@
                     {!! Form::text('price', null, array('placeholder' => 'Price','class' => 'form-control')) !!}
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6">
+            {{-- <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="form-group">
                     <strong>Status:</strong>
                     {!! Form::select('status', ['active' => 'Active', 'inactive' => 'Inactive'], null, array('class' => 'form-control')) !!}
                 </div>
-            </div>
+            </div> --}}
             <div class="col-12 mt-1">
                 <button type="submit" class="btn btn-primary float-right">Submit</button>
             </div>

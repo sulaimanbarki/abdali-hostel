@@ -16,6 +16,7 @@ class Room extends Model
         'floor_id',
         'room_type',
         'no_of_seats',
+        'no_of_seats_available',
         'status',
         'price',
     ];

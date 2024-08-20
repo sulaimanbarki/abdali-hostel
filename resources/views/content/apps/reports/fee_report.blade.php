@@ -16,11 +16,12 @@
     @endsection
 
     @section('content')
-        <!-- users list start -->
+
         <section class="app-user-list">
-            <div class="card">
-                <div class="col-lg-12 text-right">
-                    <form action="">
+            <div class="card py-3">
+                <div class="col-lg-12">
+
+                    <form action="" class="mb-4">
                         <div class="row">
                             <div class="col-md-4">
                                 <input type="month" name="fee_month" id="fee_month" class="form-control mr-2"
@@ -33,35 +34,42 @@
                             </div>
                         </div>
                     </form>
-                </div>
 
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <div id="fee-report-container" class="card-body">
-                            <!-- Fee report data will be appended here -->
+                    <hr class="mb-4">
+
+
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div id="fee-report-container" class="card-body">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="expense-report-container" class="card-body">
+
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div id="expense-report-container" class="card-body">
-                            <!-- Expense report data will be appended here -->
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Summary Footer -->
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col-md-6 text-start">
-                            <h4>Dues : <span id="dues-payment">0.00</span></h4>
-                            <h4>Payment: <span id="total-payment">0.00</span></h4>
-                            <h4>Total Amount: <span id="total-amount">0.00</span></h4>
-                        </div>
-                        <div class="col-md-6 text-end">
-                            <h4>Total Debit Amount: <span id="total-debit-amount">0.00</span></h4>
+
+                    <hr class="mb-4">
+
+
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-md-6 text-start">
+                                <h4>Dues : <span id="dues-payment">0.00</span></h4>
+                                <h4>Payment: <span id="total-payment">0.00</span></h4>
+                                <h4>Total Amount: <span id="total-amount">0.00</span></h4>
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <h4>Total Debit Amount: <span id="total-debit-amount">0.00</span></h4>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
     @endsection
 

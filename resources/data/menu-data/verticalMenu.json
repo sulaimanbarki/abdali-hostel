@@ -125,6 +125,12 @@
           "name": "expense heads",
           "icon": "settings",
           "slug": "expense_heads.index"
+        },
+        {
+          "url": "admin/reports/available-rooms",
+          "name": "available rooms",
+          "icon": "settings",
+          "slug": "room.available_rooms"
         }
       ]
     }
