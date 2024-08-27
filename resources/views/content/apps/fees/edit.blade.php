@@ -44,6 +44,11 @@
                         <input type="number" class="form-control" id="amount" name="amount" value="{{ $fee->amount }}"
                             required>
                     </div>
+                    <div class="form-group">
+                        <label for="paid_amount">Paid Amount</label>
+                        <input type="number" class="form-control" id="paid_amount" name="paid_amount" value="{{ $fee->paid_amount }}"
+                            required>
+                    </div>
 
 
 
