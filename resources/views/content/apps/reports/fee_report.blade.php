@@ -52,7 +52,7 @@
                     </div>
 
 
-                    <hr class="mb-4">
+
 
 
                     <div class="card-footer">
@@ -86,6 +86,160 @@
 
     @section('page-script')
         <script>
+            // $(function() {
+            //     $('#monthwise').click(function(e) {
+            //         e.preventDefault();
+
+            //         var feeMonth = $('#fee_month').val();
+
+            //         if (feeMonth) {
+            //             $.ajax({
+            //                 url: '{{ route('reports.fee_reports-bydate') }}',
+            //                 method: 'GET',
+            //                 data: {
+            //                     fee_month: feeMonth,
+            //                 },
+            //                 success: function(response) {
+            //                     console.log('Response Data:', response);
+            //                     $('#fee-report-container').empty();
+            //                     $('#expense-report-container').empty();
+
+            //                     var feeHtml = '';
+            //                     var expenseHtml = '';
+            //                     var staffTransactionHtml = '';
+
+            //                     // Fees Data
+            //                     if (response.daily_fees && response.daily_fees.length > 0) {
+            //                         response.daily_fees.forEach(function(fee) {
+            //                             feeHtml += `
+    //                 <div class="card mb-1">
+    //                     <div class="card-body">
+    //                         <div class="row">
+    //                             <div class="col-md-12 mt-2">
+    //                                 <p class="text-start">
+    //                                     <span class="font-weight-bold font-italic text-success">${fee.registration_name}</span>
+    //                                     in Floor No
+    //                                     <span class="font-weight-bold font-italic text-success">${fee.floor_name}</span>
+    //                                     for Room No
+    //                                     <span class="font-weight-bold font-italic text-success">${fee.room_name}</span>
+    //                                     paid
+    //                                     <span class="font-weight-bold font-italic text-success">${parseFloat(fee.paid_amount).toFixed(2)}</span>
+    //                                     out of
+    //                                     <span class="font-weight-bold font-italic text-success">${parseFloat(fee.amount).toFixed(2)}</span>
+    //                                     on
+    //                                     <span class="font-weight-bold font-italic text-success">${new Date(fee.fee_date).toLocaleDateString()}</span>
+    //                                 </p>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                 </div>`;
+            //                         });
+            //                     } else {
+            //                         feeHtml +=
+            //                             `<div class="alert alert-info">No fee data available for the selected month.</div>`;
+            //                     }
+
+            //                     // Expenses Data
+            //                     if (response.daily_expenses && response.daily_expenses.length > 0) {
+            //                         response.daily_expenses.forEach(function(expense) {
+            //                             expenseHtml += `
+    //                 <div class="card mb-1">
+    //                     <div class="card-body">
+    //                         <div class="row">
+    //                             <div class="col-md-12 mt-2">
+    //                                 <p class="text-start">
+    //                                     <span class="font-weight-bold font-italic text-danger">${expense.description}</span>
+    //                                     amounting to
+    //                                     <span class="font-weight-bold font-italic text-danger">${parseFloat(expense.amount).toFixed(2)}</span>
+    //                                     was paid on
+    //                                     <span class="font-weight-bold font-italic text-danger">${new Date(expense.expense_date).toLocaleDateString()}</span>
+    //                                 </p>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                 </div>`;
+            //                         });
+            //                     } else {
+            //                         expenseHtml +=
+            //                             `<div class="alert alert-info">No expense data available for the selected month.</div>`;
+            //                     }
+
+            //                     // Staff Transactions Data
+            //                     if (response.staff_transactions && response.staff_transactions
+            //                         .length > 0) {
+            //                         response.staff_transactions.forEach(function(transaction) {
+            //                             staffTransactionHtml += `
+    //                 <div class="card mb-1">
+    //                     <div class="card-body">
+    //                         <div class="row">
+    //                             <div class="col-md-12 mt-2">
+    //                                 <p class="text-start">
+    //                                     Transaction on
+    //                                     <span class="font-weight-bold font-italic text-primary">${new Date(transaction.transection_date).toLocaleDateString()}</span>
+    //                                     for
+    //                                     <span class="font-weight-bold font-italic text-primary">${parseFloat(transaction.amount).toFixed(2)}</span>
+    //                                     described as
+    //                                     <span class="font-weight-bold font-italic text-primary">${transaction.description}</span>
+    //                                     to
+    //                                     <span class="font-weight-bold font-italic text-primary">${transaction.staff_name}</span>
+    //                                 </p>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                 </div>`;
+            //                         });
+            //                     } else {
+            //                         staffTransactionHtml +=
+            //                             `<div class="alert alert-info">No staff transaction data available for the selected month.</div>`;
+            //                     }
+
+            //                     // Append data to containers
+            //                     $('#fee-report-container').append(feeHtml);
+            //                     $('#expense-report-container').append(expenseHtml +
+            //                         staffTransactionHtml);
+
+            //                     // Update footer summaries
+            //                     $('#dues-payment').text(parseFloat(response.dues_payment).toFixed(
+            //                         2));
+            //                     $('#total-transaction-amount').text(parseFloat(response
+            //                         .total_transaction_amount).toFixed(2));
+            //                     $('#total-amount').text(parseFloat(response.total_amount).toFixed(
+            //                         2));
+            //                     $('#total-debit-amount').text(parseFloat(response
+            //                         .total_debit_amount).toFixed(2));
+            //                 },
+            //                 error: function(error) {
+            //                     console.log('Error:', error);
+            //                     $('#fee-report-container').html(
+            //                         '<div class="alert alert-danger">An error occurred while fetching the report.</div>'
+            //                     );
+            //                 }
+            //             });
+            //         } else {
+            //             alert('Please select a month.');
+            //         }
+            //     });
+            // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             $(function() {
                 $('#monthwise').click(function(e) {
                     e.preventDefault();
@@ -172,20 +326,16 @@
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-12 mt-2">
-                                                        <p class="text-start">
-                                                            Transaction on
-                                                            <span style="font-weight: bold; font-style: italic; color: blue;">
-                                                                ${new Date(transaction.transection_date).toLocaleDateString()}
-                                                            </span>
-                                                            for
-                                                            <span style="font-weight: bold; font-style: italic; color: blue;">
-                                                                ${parseFloat(transaction.amount).toFixed(2)}
-                                                            </span>
-                                                            described as
-                                                            <span style="font-weight: bold; font-style: italic; color: blue;">
-                                                                ${transaction.description}
-                                                            </span>
-                                                        </p>
+                                                         <p class="text-start">
+            //                                     Transaction on
+            //                                     <span class="font-weight-bold font-italic text-primary">${new Date(transaction.transection_date).toLocaleDateString()}</span>
+            //                                     for
+            //                                     <span class="font-weight-bold font-italic text-primary">${parseFloat(transaction.amount).toFixed(2)}</span>
+            //                                     described as
+            //                                     <span class="font-weight-bold font-italic text-primary">${transaction.description}</span>
+            //                                     to
+            //                                     <span class="font-weight-bold font-italic text-primary">${transaction.staff_name}</span>
+            //                                 </p>
                                                     </div>
                                                 </div>
                                             </div>

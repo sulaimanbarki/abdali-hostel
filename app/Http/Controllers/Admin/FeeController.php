@@ -114,4 +114,5 @@ class FeeController extends Controller
 
         return redirect()->route('fees.index')->with('success', 'Fee updated and transaction recorded successfully!');
     }
+
 }

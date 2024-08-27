@@ -26,4 +26,9 @@ class Staff extends Model
     {
         return $this->belongsTo(StaffRole::class, 'staff_role_id');
     }
+
+    public function transections()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

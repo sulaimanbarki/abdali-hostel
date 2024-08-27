@@ -55,6 +55,7 @@
                             <th>Floor No</th>
                             <th>Room No</th>
                             <th>Room Type</th>
+                            <th>No Of Seats</th>
                             <th>Available Seats</th>
                         </tr>
                     </thead>
@@ -101,6 +102,7 @@
                             <td>${room.floor.floor_name}</td>
                             <td>${room.room_name}</td>
                             <td>${room.room_type}</td>
+                            <td>${room.no_of_seats}</td>
                             <td>${room.no_of_seats_available}</td>
                         </tr>
                     `;

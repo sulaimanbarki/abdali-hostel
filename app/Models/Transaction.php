@@ -26,4 +26,8 @@ class Transaction extends Model
     {
         return $this->belongsTo(Fee::class);
     }
+    public function staff()
+    {
+        return $this->belongsTo(Staff::class,  'transection_type_id');
+    }
 }
