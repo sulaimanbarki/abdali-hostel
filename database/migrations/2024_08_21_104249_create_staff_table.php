@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('address');
             $table->string('image')->nullable();
             $table->string('phone_no');
-
             $table->unsignedBigInteger('staff_role_id');
             $table->string('status')->default('Active');
             $table->softDeletes();
