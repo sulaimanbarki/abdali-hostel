@@ -49,7 +49,13 @@ class FeeAction
             $fee->status = $fee->paid_amount == $fee->amount ? 'paid' : 'partial-payment';
         }
 
+
         $fee->save();
+        $feeMonth = $fee->fee_date->format('Y-m');
+        $currentMonth = now()->format('Y-m');
+
+        $transactionDate = $feeMonth === $currentMonth ? now() : $fee->fee_date;
+
 
         Transaction::updateOrCreate(
             [
@@ -58,7 +64,7 @@ class FeeAction
             ],
             [
                 'amount' => $paidAmount,
-                'transection_date' => now(),
+                'transection_date' => $transactionDate,
                 'description' => 'Fee payment for fee ID ' . $fee->id . '. Paid amount: ' . $paidAmount,
                 'type' => 'credit', // Type of transaction, assuming 'credit' for payments
                 'status' => 'completed' // Adjust if needed
