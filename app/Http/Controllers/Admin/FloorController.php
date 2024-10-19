@@ -121,7 +121,7 @@ class FloorController extends Controller
 
     public function getRooms($floor_id)
     {
-        $rooms = Room::where('floor_id', $floor_id)->where('status', 'UnBooked')->pluck('room_name', 'id');
+        $rooms = Room::where('floor_id', $floor_id)->pluck('room_name', 'id');
         return response()->json($rooms);
     }
 }
