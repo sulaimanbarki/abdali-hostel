@@ -60,16 +60,16 @@ class RegistrationController extends Controller
         $room = Room::findOrFail($request->room_id);
 
         // Check if there are available seats
-        if ($room->no_of_seats_available > 0) {
-            // Decrease the number of available seats by 1
-            $room->no_of_seats_available -= 1;
+        // if ($room->no_of_seats_available > 0) {
+        //     // Decrease the number of available seats by 1
+        //     $room->no_of_seats_available -= 1;
 
-            // Update room status if all seats are booked
-            if ($room->no_of_seats_available == 0) {
-                $room->status = 'Booked';
-            }
+        //     // Update room status if all seats are booked
+        //     if ($room->no_of_seats_available == 0) {
+        //         $room->status = 'Booked';
+        //     }
 
-            $room->save();
+        //     $room->save();
 
             $registration = Registration::create($data);
             $registration->addAllMediaFromTokens();
@@ -81,11 +81,11 @@ class RegistrationController extends Controller
                 Alert::toast('Failed to create registration', 'error');
                 return redirect()->back();
             }
-        } else {
-            // Show an error message if no seats are available
-            Alert::toast('No available seats in the selected room', 'error');
-            return redirect()->back();
-        }
+        // } else {
+        //     // Show an error message if no seats are available
+        //     Alert::toast('No available seats in the selected room', 'error');
+        //     return redirect()->back();
+        // }
     }
 
 
